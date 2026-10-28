@@ -1,133 +1,207 @@
 <svg xmlns="http://www.w3.org/2000/svg"
-     width="1200" height="440" viewBox="0 0 1200 440"
-     role="img" aria-labelledby="title desc">
-  <title id="title">Martin Lema – Küste bei Sonnenuntergang</title>
-  <desc id="desc">
-    Animierte Meereslandschaft mit goldener Sonne, sanften Wellen
-    und fliegenden Möwen.
+     width="1440" height="560" viewBox="0 0 1440 560"
+     role="img" aria-labelledby="title description">
+
+  <title id="title">Martin Lema</title>
+  <desc id="description">
+    Eine animierte Küste mit türkisfarbenen Wellen, goldener Sonne,
+    fliegenden Möwen und einem schwebenden, schimmernden Schriftzug.
   </desc>
 
   <defs>
+    <!-- FARBEN -->
     <linearGradient id="sky" x2="0" y2="1">
-      <stop stop-color="#071827"/>
-      <stop offset=".45" stop-color="#25485c"/>
-      <stop offset=".78" stop-color="#c48f87"/>
-      <stop offset="1" stop-color="#ffd6a0"/>
+      <stop stop-color="#030b19"/>
+      <stop offset=".42" stop-color="#102d46"/>
+      <stop offset=".75" stop-color="#52747d"/>
+      <stop offset="1" stop-color="#e6ad82"/>
     </linearGradient>
 
-    <linearGradient id="sea" x2="0" y2="1">
-      <stop stop-color="#739a9e"/>
-      <stop offset=".35" stop-color="#296474"/>
-      <stop offset="1" stop-color="#092b42"/>
+    <linearGradient id="ocean" x2=".15" y2="1">
+      <stop stop-color="#538d94"/>
+      <stop offset=".23" stop-color="#14566a"/>
+      <stop offset=".65" stop-color="#073244"/>
+      <stop offset="1" stop-color="#021521"/>
     </linearGradient>
 
-    <linearGradient id="sand" x2=".8" y2="1">
-      <stop stop-color="#e4c3a1"/>
-      <stop offset="1" stop-color="#967f77"/>
-    </linearGradient>
-
-    <linearGradient id="letters" x2="0" y2="1">
-      <stop stop-color="#ffffff"/>
-      <stop offset="1" stop-color="#ffdfb9"/>
-    </linearGradient>
-
-    <radialGradient id="sunGlow">
-      <stop stop-color="#ffd5a0" stop-opacity=".55"/>
-      <stop offset="1" stop-color="#ffd5a0" stop-opacity="0"/>
+    <radialGradient id="halo">
+      <stop stop-color="#ffe1af" stop-opacity=".65"/>
+      <stop offset=".35" stop-color="#ffba80" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#ffba80" stop-opacity="0"/>
     </radialGradient>
+
+    <linearGradient id="sun" x2="0" y2="1">
+      <stop stop-color="#fff9db"/>
+      <stop offset="1" stop-color="#ffc28c"/>
+    </linearGradient>
 
     <linearGradient id="reflection" x2="0" y2="1">
-      <stop stop-color="#ffe1b0" stop-opacity=".6"/>
-      <stop offset="1" stop-color="#ffe1b0" stop-opacity="0"/>
+      <stop stop-color="#ffe5b2" stop-opacity=".55"/>
+      <stop offset=".5" stop-color="#efc696" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#efc696" stop-opacity="0"/>
     </linearGradient>
 
-    <radialGradient id="vignette" r=".75">
-      <stop offset=".4" stop-color="#02111f" stop-opacity="0"/>
-      <stop offset="1" stop-color="#02111f" stop-opacity=".65"/>
+    <linearGradient id="sand" x2=".7" y2="1">
+      <stop stop-color="#d4c0a4"/>
+      <stop offset=".35" stop-color="#8d9490"/>
+      <stop offset="1" stop-color="#243d49"/>
+    </linearGradient>
+
+    <linearGradient id="cliff" x2=".8" y2="1">
+      <stop stop-color="#183e4b"/>
+      <stop offset="1" stop-color="#020e19"/>
+    </linearGradient>
+
+    <linearGradient id="nameFill" x2=".2" y2="1">
+      <stop stop-color="#ffffff"/>
+      <stop offset=".48" stop-color="#eaf8f6"/>
+      <stop offset="1" stop-color="#8ec4ce"/>
+    </linearGradient>
+
+    <!-- Breites Lichtband, das durch die Buchstaben läuft -->
+    <linearGradient id="shine"
+                    gradientUnits="userSpaceOnUse"
+                    x1="-600" y1="0" x2="0" y2="150">
+      <stop stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset=".38" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#ffffff" stop-opacity=".95"/>
+      <stop offset=".62" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+      <animateTransform attributeName="gradientTransform"
+                        type="translate"
+                        values="-300 0;2100 0;2100 0"
+                        keyTimes="0;.65;1"
+                        dur="8s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <radialGradient id="vignette" rx=".7">
+      <stop offset=".35" stop-color="#010815" stop-opacity="0"/>
+      <stop offset="1" stop-color="#010815" stop-opacity=".72"/>
     </radialGradient>
 
-    <filter id="textShadow" x="-20%" y="-40%" width="140%" height="190%">
-      <feDropShadow dx="0" dy="4" stdDeviation="8"
-                    flood-color="#071827" flood-opacity=".55"/>
+    <filter id="nameShadow" x="-30%" y="-70%" width="160%" height="250%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10"
+                    flood-color="#010a15" flood-opacity=".8"/>
+    </filter>
+
+    <filter id="glow" x="-50%" y="-100%" width="200%" height="300%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="2"/>
     </filter>
 
     <clipPath id="frame">
-      <rect width="1200" height="440" rx="22"/>
+      <rect width="1440" height="560" rx="26"/>
     </clipPath>
 
-    <!-- Die beiden Flügel werden getrennt animiert. -->
+    <!-- Gemeinsame Textform für Farbe, Glow und Lichtreflex -->
+    <text id="name" x="720" y="276"
+          text-anchor="middle"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-size="112" font-weight="400"
+          letter-spacing="12">Martin Lema</text>
+
+    <!-- Möwenflügel bewegen sich um ihren gemeinsamen Ursprung -->
     <g id="gull" fill="none" stroke="currentColor"
-       stroke-width="2.2" stroke-linecap="round">
-      <path class="wing-left" d="M0 0 Q-9 -12 -23 -8"/>
-      <path class="wing-right" d="M0 0 Q9 -12 23 -8"/>
+       stroke-width="2" stroke-linecap="round">
+      <path d="M0 0Q-12 -15 -29 -9">
+        <animateTransform attributeName="transform" type="rotate"
+                          values="-9;14;-9" dur="2.8s"
+                          repeatCount="indefinite"/>
+      </path>
+      <path d="M0 0Q12 -15 29 -9">
+        <animateTransform attributeName="transform" type="rotate"
+                          values="9;-14;9" dur="2.8s"
+                          repeatCount="indefinite"/>
+      </path>
     </g>
 
+    <!-- Nahtlos wiederholbare Wellen -->
+    <pattern id="ripple" width="240" height="38"
+             patternUnits="userSpaceOnUse">
+      <path d="M0 18Q60 9 120 18T240 18"
+            fill="none" stroke="#a0e2df"
+            stroke-width="1" opacity=".22"/>
+      <path d="M32 32h45M162 5h36"
+            stroke="#c8ece6" stroke-width="1" opacity=".12"/>
+    </pattern>
+
     <style>
-      .name {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 88px;
-        font-weight: 400;
-        letter-spacing: 10px;
+      .float {
+        animation: float 7s ease-in-out infinite;
       }
 
-      .wing-left {
-        animation: flap-left 2.4s ease-in-out infinite;
+      .name-glow {
+        animation: breathe 6s ease-in-out infinite;
       }
 
-      .wing-right {
-        animation: flap-right 2.4s ease-in-out infinite;
+      .water {
+        animation: water 15s linear infinite;
       }
 
-      .bird-a { animation: glide-a 19s ease-in-out infinite; }
-      .bird-b { animation: glide-b 23s ease-in-out infinite; }
-      .bird-c { animation: glide-c 17s ease-in-out infinite; }
-
-      .wave-a { animation: drift 12s linear infinite; }
-      .wave-b { animation: drift 18s linear infinite reverse; }
-      .wave-c { animation: drift 24s linear infinite; }
-
-      .sparkle { animation: shimmer 5s ease-in-out infinite; }
-      .sparkle-late { animation: shimmer 5s ease-in-out -2.5s infinite; }
-      .shore { animation: tide 8s ease-in-out infinite; }
-
-      @keyframes flap-left {
-        0%, 100% { transform: rotate(8deg); }
-        50% { transform: rotate(-12deg); }
+      .swell-one {
+        animation: swell 9s ease-in-out infinite;
       }
 
-      @keyframes flap-right {
-        0%, 100% { transform: rotate(-8deg); }
-        50% { transform: rotate(12deg); }
+      .swell-two {
+        animation: swell 11s ease-in-out -4s infinite;
       }
 
-      @keyframes glide-a {
-        0%, 100% { transform: translate(0, 0); }
-        50% { transform: translate(100px, -15px); }
+      .foam {
+        animation: foam 8s ease-in-out infinite;
       }
 
-      @keyframes glide-b {
-        0%, 100% { transform: translate(0, 0); }
-        50% { transform: translate(-125px, 13px); }
+      .glint {
+        animation: glint 4s ease-in-out infinite;
       }
 
-      @keyframes glide-c {
-        0%, 100% { transform: translate(0, 0); }
-        50% { transform: translate(70px, 18px); }
+      .glint-two {
+        animation: glint 5s ease-in-out -2s infinite;
       }
 
-      @keyframes drift {
+      .cloud {
+        animation: cloud 24s ease-in-out infinite alternate;
+      }
+
+      .star {
+        animation: glint 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-9px); }
+      }
+
+      @keyframes breathe {
+        0%, 100% { opacity: .15; }
+        50% { opacity: .38; }
+      }
+
+      @keyframes water {
         from { transform: translateX(0); }
         to { transform: translateX(-240px); }
       }
 
-      @keyframes shimmer {
-        0%, 100% { opacity: .25; }
-        50% { opacity: .75; }
+      @keyframes swell {
+        0%, 100% { transform: translate(0, 0); }
+        50% { transform: translate(-28px, 8px); }
       }
 
-      @keyframes tide {
-        0%, 100% { transform: translateY(0); opacity: .45; }
-        50% { transform: translateY(-7px); opacity: .8; }
+      @keyframes foam {
+        0%, 100% { transform: translateY(0); opacity: .35; }
+        50% { transform: translateY(-9px); opacity: .85; }
+      }
+
+      @keyframes glint {
+        0%, 100% { opacity: .2; }
+        50% { opacity: .85; }
+      }
+
+      @keyframes cloud {
+        from { transform: translateX(-20px); }
+        to { transform: translateX(35px); }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -137,138 +211,202 @@
   </defs>
 
   <g clip-path="url(#frame)">
-    <!-- Himmel und warmes Abendlicht -->
-    <path fill="url(#sky)" d="M0 0h1200v440H0z"/>
-    <ellipse cx="865" cy="219" rx="310" ry="200" fill="url(#sunGlow)"/>
-    <circle cx="865" cy="220" r="43" fill="#ffdbab"/>
+    <!-- NACHTBLAUER HIMMEL -->
+    <path fill="url(#sky)" d="M0 0h1440v560H0z"/>
 
-    <!-- Dünne Wolkenbänder -->
-    <g fill="none" stroke-linecap="round">
-      <path d="M695 113 Q830 100 995 117"
-            stroke="#e9bbaa" stroke-width="3" opacity=".13"/>
-      <path d="M763 130 Q910 119 1115 137"
-            stroke="#f3ceba" stroke-width="2" opacity=".16"/>
-      <path d="M70 88 Q209 75 355 91"
-            stroke="#d1dce1" stroke-width="2" opacity=".1"/>
+    <!-- Vereinzelte Lichtpunkte -->
+    <g fill="#e5f6ff">
+      <circle class="star" cx="175" cy="61" r="1.2"/>
+      <circle cx="402" cy="92" r=".8" opacity=".4"/>
+      <circle class="star" cx="655" cy="45" r="1"/>
+      <circle cx="905" cy="72" r=".8" opacity=".35"/>
+      <circle class="star" cx="1264" cy="54" r="1.1"/>
+      <circle cx="1120" cy="104" r=".7" opacity=".4"/>
     </g>
 
-    <!-- Ferne Landzunge -->
-    <path d="M0 235 L0 201 37 207 67 198 106 218
-             143 216 181 231 237 237Z"
-          fill="#193c4c" opacity=".65"/>
+    <!-- SONNENUNTERGANG -->
+    <ellipse cx="1050" cy="292" rx="360" ry="255" fill="url(#halo)"/>
+    <circle cx="1050" cy="276" r="62" fill="url(#sun)"/>
+    <path d="M972 294h156M984 302h132"
+          stroke="#edbb93" stroke-width="2" opacity=".35"/>
 
-    <!-- Meer und Horizont -->
-    <path d="M0 240H1200V440H0Z" fill="url(#sea)"/>
-    <path d="M0 240H1200" stroke="#ffe1bd" stroke-opacity=".4"/>
+    <!-- Langsame, feine Wolken -->
+    <g class="cloud" fill="none" stroke-linecap="round">
+      <path d="M755 147Q956 126 1233 150"
+            stroke="#f3c5a4" stroke-width="3" opacity=".13"/>
+      <path d="M865 163Q1057 150 1350 172"
+            stroke="#f3c5a4" stroke-width="2" opacity=".12"/>
+      <path d="M59 122Q244 103 464 124"
+            stroke="#d0e8ee" stroke-width="2" opacity=".08"/>
+    </g>
 
-    <!-- Sonnenreflexion -->
-    <path d="M844 242H886L989 418H741Z"
-          fill="url(#reflection)" opacity=".45"/>
+    <!-- FERNE KÜSTE -->
+    <path d="M0 302V249L39 255 77 240 104 259 142 263
+             185 280 228 277 270 296 340 304Z"
+          fill="#183a4b" opacity=".8"/>
+    <path d="M1203 307l47 -17 28 3 31 -19 43 10 42 -13 46 11v35Z"
+          fill="#234858" opacity=".6"/>
 
-    <g fill="none" stroke="#ffe3b6" stroke-linecap="round">
-      <g class="sparkle">
-        <path d="M844 250h41 M825 262h70 M846 278h65
-                 M803 296h93 M833 321h100 M783 351h128"
+    <!-- MEER -->
+    <path d="M0 309H1440V560H0Z" fill="url(#ocean)"/>
+    <path d="M0 309H1440" stroke="#f3dfbc" opacity=".4"/>
+
+    <!-- Lichtstrasse auf dem Wasser -->
+    <path d="M1020 310h60l132 250H884Z" fill="url(#reflection)"/>
+
+    <g fill="none" stroke="#ffe4b3" stroke-linecap="round">
+      <g class="glint">
+        <path d="M1021 319h61M1009 331h84M1025 348h58
+                 M988 368h101M1017 394h114M965 426h126"
               stroke-width="2"/>
       </g>
-      <g class="sparkle-late" opacity=".4">
-        <path d="M855 255h33 M844 269h54 M814 286h61
-                 M849 307h74 M802 335h64 M844 370h97"
+      <g class="glint-two">
+        <path d="M1035 324h28M1025 339h71M1003 358h59
+                 M1035 381h66M986 410h81M1034 448h111"
               stroke-width="1.5"/>
       </g>
     </g>
 
-    <!-- Periodische Wellen: 240 Pixel pro Wiederholung -->
-    <g fill="none" stroke-linecap="round">
-      <path class="wave-a"
-            d="M0 275q60 -7 120 0t120 0t120 0t120 0
-               t120 0t120 0t120 0t120 0t120 0t120 0t120 0t120 0"
-            stroke="#d5e6df" stroke-opacity=".2"/>
-
-      <path class="wave-b"
-            d="M0 310q60 -9 120 0t120 0t120 0t120 0
-               t120 0t120 0t120 0t120 0t120 0t120 0t120 0t120 0"
-            stroke="#b5d7d5" stroke-width="1.5" stroke-opacity=".22"/>
-
-      <path class="wave-c"
-            d="M0 352q60 -10 120 0t120 0t120 0t120 0
-               t120 0t120 0t120 0t120 0t120 0t120 0t120 0t120 0"
-            stroke="#91c2c5" stroke-width="2" stroke-opacity=".18"/>
+    <!-- Kleine Wellen in der Ferne -->
+    <g opacity=".6">
+      <path class="water" d="M0 325h1680v235H0Z" fill="url(#ripple)"/>
     </g>
 
-    <!-- Strand im Vordergrund -->
-    <path d="M0 335C139 336 202 381 362 405
-             S661 448 834 440H0Z"
+    <!-- Grosse, weich geschwungene Wasserflächen -->
+    <g class="swell-one">
+      <path d="M-50 391C144 360 278 418 481 393
+               S802 361 1019 395 1312 411 1490 377V560H-50Z"
+            fill="#0c5363" opacity=".33"/>
+      <path d="M-50 391C144 360 278 418 481 393
+               S802 361 1019 395 1312 411 1490 377"
+            fill="none" stroke="#6ac5c9" stroke-opacity=".28"/>
+    </g>
+
+    <g class="swell-two">
+      <path d="M-50 447C165 403 330 475 569 441
+               S929 419 1112 449 1325 465 1490 431V560H-50Z"
+            fill="#032b3d" opacity=".65"/>
+      <path d="M-50 447C165 403 330 475 569 441
+               S929 419 1112 449 1325 465 1490 431"
+            fill="none" stroke="#8bddd6" stroke-opacity=".25"
+            stroke-width="2"/>
+    </g>
+
+    <!-- GESCHWUNGENER STRAND -->
+    <path d="M-30 397C102 401 174 449 300 478
+             C470 520 617 513 790 560H-30Z"
           fill="url(#sand)"/>
 
-    <path d="M-20 328C128 328 213 375 368 399
-             S651 440 829 445"
-          fill="none" stroke="#8fb9bb" stroke-width="19" opacity=".32"/>
+    <!-- Türkisfarbene Brandung -->
+    <path d="M-30 391C102 395 174 443 300 472
+             C470 514 617 507 790 554"
+          fill="none" stroke="#47c7c9" stroke-width="24"
+          opacity=".13"/>
 
-    <g class="shore">
-      <path d="M-20 332C130 332 210 380 365 404
-               S650 445 830 449"
-            fill="none" stroke="#f0f3df" stroke-width="3"/>
-      <path d="M-20 341C130 341 210 387 365 412"
-            fill="none" stroke="#fff0d5" stroke-width="1" opacity=".5"/>
+    <g class="foam" fill="none">
+      <path d="M-30 394C102 398 174 446 300 475
+               C470 517 617 510 790 557"
+            stroke="#dafcf0" stroke-width="3"/>
+      <path d="M-30 401C102 405 174 453 300 482
+               C470 524 617 517 790 564"
+            stroke="#d3f8ec" stroke-width="1" opacity=".5"/>
     </g>
 
-    <!-- Küstenfelsen -->
-    <path d="M1065 440l27 -30 22 -4 15 -21 27 7 16 -12
-             28 8v52Z" fill="#102c39"/>
-    <path d="M1102 412l28 -19 23 8 19 -13 28 10"
-          fill="none" stroke="#587078" stroke-opacity=".35"/>
+    <!-- KÜSTENFELSEN RECHTS -->
+    <path d="M1154 560l43 -39 31 -7 18 -38 33 -12
+             22 -31 31 8 31 -24 32 15 45 -10v138Z"
+          fill="url(#cliff)"/>
+    <path d="M1202 522l39 -13 19 -35 24 -4 20 -27
+             28 9 33 -23 30 11"
+          fill="none" stroke="#5c7e81" stroke-opacity=".3"/>
+    <path d="M1284 470l-9 42 22 48M1365 429l-13 57 31 31"
+          fill="none" stroke="#030f1c" stroke-width="3" opacity=".6"/>
 
-    <!-- Kleine Strandgräser -->
-    <g fill="none" stroke="#394846" stroke-linecap="round">
-      <path d="M42 440q4 -34 -9 -55 M43 440q15 -40 29 -48
-               M43 440q-8 -27 -22 -34 M52 440q6 -25 19 -32"
-            stroke-width="2"/>
-      <path d="M91 440q-3 -21 -13 -32 M92 440q8 -30 19 -39"
-            stroke-width="1.5"/>
+    <!-- Dünengras links -->
+    <g fill="none" stroke="#15323b" stroke-linecap="round">
+      <path d="M53 560Q58 512 35 478M54 560Q72 498 96 487
+               M52 560Q38 525 18 513M65 560Q77 526 95 519"
+            stroke-width="2.5"/>
+      <path d="M111 560Q108 532 91 514M112 560Q126 516 145 505
+               M120 560Q134 539 148 537"
+            stroke-width="1.8"/>
     </g>
 
-    <!-- Möwen hinter dem Schriftzug -->
-    <g color="#f7eee1">
-      <g transform="translate(207 124)">
-        <g class="bird-a"><use href="#gull"/></g>
+    <!-- MÖWEN: eigene Flugbahnen und Flügelschläge -->
+    <g color="#f6f5e9">
+      <g>
+        <animateTransform attributeName="transform" type="translate"
+                          values="-100 155;340 115;860 145;1540 92"
+                          keyTimes="0;.3;.65;1"
+                          dur="31s" begin="-8s" repeatCount="indefinite"/>
+        <use href="#gull" transform="scale(.85)"/>
       </g>
-      <g transform="translate(334 87) scale(.58)" opacity=".75">
-        <g class="bird-c"><use href="#gull"/></g>
+
+      <g opacity=".8">
+        <animateTransform attributeName="transform" type="translate"
+                          values="-140 122;400 81;970 111;1570 66"
+                          keyTimes="0;.35;.72;1"
+                          dur="37s" begin="-15s" repeatCount="indefinite"/>
+        <use href="#gull" transform="scale(.48)"/>
       </g>
-      <g transform="translate(995 104) scale(.88)" opacity=".9">
-        <g class="bird-b"><use href="#gull"/></g>
+
+      <g opacity=".9">
+        <animateTransform attributeName="transform" type="translate"
+                          values="1540 168;1040 119;520 151;-100 99"
+                          keyTimes="0;.34;.7;1"
+                          dur="35s" begin="-5s" repeatCount="indefinite"/>
+        <use href="#gull" transform="scale(.65)"/>
       </g>
-      <g transform="translate(1080 153) scale(.5)" opacity=".65">
-        <g class="bird-c"><use href="#gull"/></g>
+
+      <g opacity=".55">
+        <animateTransform attributeName="transform" type="translate"
+                          values="-100 285;590 266;1540 279"
+                          dur="44s" begin="-21s" repeatCount="indefinite"/>
+        <use href="#gull" transform="scale(.3)"/>
       </g>
     </g>
 
-    <g color="#254858" opacity=".65">
-      <g transform="translate(733 221) scale(.35)">
-        <g class="bird-b"><use href="#gull"/></g>
-      </g>
-      <g transform="translate(454 245) scale(.28)">
-        <g class="bird-a"><use href="#gull"/></g>
+    <!-- FILMISCHE ABDUNKLUNG -->
+    <path d="M0 0h1440v560H0Z" fill="url(#vignette)"/>
+
+    <!-- SCHWEBENDER NAME -->
+    <g class="float">
+      <!-- Sanft pulsierendes Licht hinter dem Schriftzug -->
+      <use href="#name" class="name-glow"
+           fill="#82e5ed" filter="url(#glow)"/>
+
+      <!-- Leicht versetzte Kontur für räumliche Tiefe -->
+      <use href="#name" transform="translate(0 3)"
+           fill="#17495b" stroke="#17495b" stroke-width="1"/>
+
+      <!-- Hauptschrift -->
+      <use href="#name" fill="url(#nameFill)"
+           filter="url(#nameShadow)"/>
+
+      <!-- Animierter Glanz direkt innerhalb der Buchstaben -->
+      <use href="#name" fill="url(#shine)"/>
+
+      <!-- Feine Lichtkante -->
+      <use href="#name" fill="none"
+           stroke="#f0ffff" stroke-width=".45" stroke-opacity=".45"/>
+
+      <!-- Elegante Linie unter dem Namen -->
+      <g transform="translate(720 309)">
+        <path d="M-160 0H-25M25 0H160"
+              stroke="#c4e6e3" stroke-opacity=".45"/>
+        <path d="M0 -5L5 0 0 5 -5 0Z"
+              fill="#e2f5ed" opacity=".8"/>
+        <circle r="11" fill="none"
+                stroke="#c4e6e3" stroke-width=".6" opacity=".3"/>
       </g>
     </g>
 
-    <!-- Dezente Abdunklung an den Rändern -->
-    <path d="M0 0h1200v440H0z" fill="url(#vignette)"/>
-
-    <!-- Name -->
-    <text x="600" y="211" text-anchor="middle"
-          class="name" fill="url(#letters)" filter="url(#textShadow)">
-      Martin Lema
-    </text>
-
-    <!-- Feine Zierlinie -->
-    <g stroke="#ffe0b6" fill="none" opacity=".6">
-      <path d="M509 239H579 M621 239H691" stroke-width="1"/>
-      <path d="M595 239l5 -4 5 4 -5 4Z" stroke-width="1"/>
-    </g>
-
-    <rect x=".5" y=".5" width="1199" height="439" rx="22"
-          fill="none" stroke="#ffffff" stroke-opacity=".12"/>
+    <!-- Dezenter Rahmen -->
+    <rect x="12" y="12" width="1416" height="536" rx="19"
+          fill="none" stroke="#c6e9ee" stroke-opacity=".12"/>
+    <path d="M39 12H102M12 39V87M1338 12H1401
+             M1428 39V87M12 473V521M39 548H102
+             M1338 548H1401M1428 473V521"
+          fill="none" stroke="#d8eeeb" stroke-opacity=".35"/>
   </g>
 </svg>
