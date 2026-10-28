@@ -1,164 +1,274 @@
-
 <svg xmlns="http://www.w3.org/2000/svg"
-     width="900" height="330"
-     viewBox="0 0 900 330">
+     width="1200" height="440" viewBox="0 0 1200 440"
+     role="img" aria-labelledby="title desc">
+  <title id="title">Martin Lema – Küste bei Sonnenuntergang</title>
+  <desc id="desc">
+    Animierte Meereslandschaft mit goldener Sonne, sanften Wellen
+    und fliegenden Möwen.
+  </desc>
 
   <defs>
     <linearGradient id="sky" x2="0" y2="1">
-      <stop offset="0%" stop-color="#14283E"/>
-      <stop offset="65%" stop-color="#668292"/>
-      <stop offset="100%" stop-color="#E0B69F"/>
+      <stop stop-color="#071827"/>
+      <stop offset=".45" stop-color="#25485c"/>
+      <stop offset=".78" stop-color="#c48f87"/>
+      <stop offset="1" stop-color="#ffd6a0"/>
     </linearGradient>
 
     <linearGradient id="sea" x2="0" y2="1">
-      <stop offset="0%" stop-color="#456F81"/>
-      <stop offset="100%" stop-color="#132B40"/>
+      <stop stop-color="#739a9e"/>
+      <stop offset=".35" stop-color="#296474"/>
+      <stop offset="1" stop-color="#092b42"/>
     </linearGradient>
 
+    <linearGradient id="sand" x2=".8" y2="1">
+      <stop stop-color="#e4c3a1"/>
+      <stop offset="1" stop-color="#967f77"/>
+    </linearGradient>
+
+    <linearGradient id="letters" x2="0" y2="1">
+      <stop stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#ffdfb9"/>
+    </linearGradient>
+
+    <radialGradient id="sunGlow">
+      <stop stop-color="#ffd5a0" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#ffd5a0" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="reflection" x2="0" y2="1">
+      <stop stop-color="#ffe1b0" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#ffe1b0" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="vignette" r=".75">
+      <stop offset=".4" stop-color="#02111f" stop-opacity="0"/>
+      <stop offset="1" stop-color="#02111f" stop-opacity=".65"/>
+    </radialGradient>
+
+    <filter id="textShadow" x="-20%" y="-40%" width="140%" height="190%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8"
+                    flood-color="#071827" flood-opacity=".55"/>
+    </filter>
+
     <clipPath id="frame">
-      <rect width="900" height="330" rx="12"/>
+      <rect width="1200" height="440" rx="22"/>
     </clipPath>
 
-    <!-- Eine animierte Moewe -->
-    <g id="bird" fill="none"
-       stroke="#233B4C"
-       stroke-width="2"
-       stroke-linecap="round">
-      <path>
-        <animate attributeName="d"
-          dur="1.7s"
-          repeatCount="indefinite"
-          values="
-          M-21 0 Q-10 -10 0 0 Q10 -10 21 0;
-          M-21 -5 Q-10 5 0 0 Q10 5 21 -5;
-          M-21 0 Q-10 -10 0 0 Q10 -10 21 0"/>
-      </path>
+    <!-- Die beiden Flügel werden getrennt animiert. -->
+    <g id="gull" fill="none" stroke="currentColor"
+       stroke-width="2.2" stroke-linecap="round">
+      <path class="wing-left" d="M0 0 Q-9 -12 -23 -8"/>
+      <path class="wing-right" d="M0 0 Q9 -12 23 -8"/>
     </g>
+
+    <style>
+      .name {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 88px;
+        font-weight: 400;
+        letter-spacing: 10px;
+      }
+
+      .wing-left {
+        animation: flap-left 2.4s ease-in-out infinite;
+      }
+
+      .wing-right {
+        animation: flap-right 2.4s ease-in-out infinite;
+      }
+
+      .bird-a { animation: glide-a 19s ease-in-out infinite; }
+      .bird-b { animation: glide-b 23s ease-in-out infinite; }
+      .bird-c { animation: glide-c 17s ease-in-out infinite; }
+
+      .wave-a { animation: drift 12s linear infinite; }
+      .wave-b { animation: drift 18s linear infinite reverse; }
+      .wave-c { animation: drift 24s linear infinite; }
+
+      .sparkle { animation: shimmer 5s ease-in-out infinite; }
+      .sparkle-late { animation: shimmer 5s ease-in-out -2.5s infinite; }
+      .shore { animation: tide 8s ease-in-out infinite; }
+
+      @keyframes flap-left {
+        0%, 100% { transform: rotate(8deg); }
+        50% { transform: rotate(-12deg); }
+      }
+
+      @keyframes flap-right {
+        0%, 100% { transform: rotate(-8deg); }
+        50% { transform: rotate(12deg); }
+      }
+
+      @keyframes glide-a {
+        0%, 100% { transform: translate(0, 0); }
+        50% { transform: translate(100px, -15px); }
+      }
+
+      @keyframes glide-b {
+        0%, 100% { transform: translate(0, 0); }
+        50% { transform: translate(-125px, 13px); }
+      }
+
+      @keyframes glide-c {
+        0%, 100% { transform: translate(0, 0); }
+        50% { transform: translate(70px, 18px); }
+      }
+
+      @keyframes drift {
+        from { transform: translateX(0); }
+        to { transform: translateX(-240px); }
+      }
+
+      @keyframes shimmer {
+        0%, 100% { opacity: .25; }
+        50% { opacity: .75; }
+      }
+
+      @keyframes tide {
+        0%, 100% { transform: translateY(0); opacity: .45; }
+        50% { transform: translateY(-7px); opacity: .8; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * { animation: none !important; }
+      }
+    </style>
   </defs>
 
   <g clip-path="url(#frame)">
+    <!-- Himmel und warmes Abendlicht -->
+    <path fill="url(#sky)" d="M0 0h1200v440H0z"/>
+    <ellipse cx="865" cy="219" rx="310" ry="200" fill="url(#sunGlow)"/>
+    <circle cx="865" cy="220" r="43" fill="#ffdbab"/>
 
-    <!-- Himmel -->
-    <rect width="900" height="330"
-          fill="url(#sky)"/>
-
-    <!-- Abendsonne -->
-    <circle cx="640" cy="145" r="54"
-            fill="#F5D5AF" opacity=".6"/>
-
-    <!-- Meer -->
-    <path d="M0 194 Q220 190 450 195
-             T900 193 V330 H0Z"
-          fill="url(#sea)"/>
-
-    <!-- Sanfte Meereswellen -->
-    <g stroke="#D9DCD4"
-       stroke-width="1.3"
-       opacity=".35"
-       fill="none">
-
-      <path d="M-100 218 Q100 210 300 218
-               T1000 218">
-        <animateTransform
-          attributeName="transform"
-          type="translate"
-          values="-25 0;25 0;-25 0"
-          dur="6s"
-          repeatCount="indefinite"/>
-      </path>
-
-      <path d="M-100 245 Q150 237 400 245
-               T1000 245">
-        <animateTransform
-          attributeName="transform"
-          type="translate"
-          values="20 0;-20 0;20 0"
-          dur="8s"
-          repeatCount="indefinite"/>
-      </path>
-
-      <path d="M-100 280 Q140 272 380 280
-               T1000 280">
-        <animateTransform
-          attributeName="transform"
-          type="translate"
-          values="-30 0;30 0;-30 0"
-          dur="10s"
-          repeatCount="indefinite"/>
-      </path>
+    <!-- Dünne Wolkenbänder -->
+    <g fill="none" stroke-linecap="round">
+      <path d="M695 113 Q830 100 995 117"
+            stroke="#e9bbaa" stroke-width="3" opacity=".13"/>
+      <path d="M763 130 Q910 119 1115 137"
+            stroke="#f3ceba" stroke-width="2" opacity=".16"/>
+      <path d="M70 88 Q209 75 355 91"
+            stroke="#d1dce1" stroke-width="2" opacity=".1"/>
     </g>
 
-    <!-- Kleine fliegende Moewe 1 -->
-    <g transform="translate(180 80)">
-      <use href="#bird"/>
-      <animateTransform
-        attributeName="transform"
-        type="translate"
-        additive="sum"
-        values="0 0;35 -9;0 0"
-        dur="7s"
-        repeatCount="indefinite"/>
+    <!-- Ferne Landzunge -->
+    <path d="M0 235 L0 201 37 207 67 198 106 218
+             143 216 181 231 237 237Z"
+          fill="#193c4c" opacity=".65"/>
+
+    <!-- Meer und Horizont -->
+    <path d="M0 240H1200V440H0Z" fill="url(#sea)"/>
+    <path d="M0 240H1200" stroke="#ffe1bd" stroke-opacity=".4"/>
+
+    <!-- Sonnenreflexion -->
+    <path d="M844 242H886L989 418H741Z"
+          fill="url(#reflection)" opacity=".45"/>
+
+    <g fill="none" stroke="#ffe3b6" stroke-linecap="round">
+      <g class="sparkle">
+        <path d="M844 250h41 M825 262h70 M846 278h65
+                 M803 296h93 M833 321h100 M783 351h128"
+              stroke-width="2"/>
+      </g>
+      <g class="sparkle-late" opacity=".4">
+        <path d="M855 255h33 M844 269h54 M814 286h61
+                 M849 307h74 M802 335h64 M844 370h97"
+              stroke-width="1.5"/>
+      </g>
     </g>
 
-    <!-- Kleine fliegende Moewe 2 -->
-    <g transform="translate(265 111) scale(.65)">
-      <use href="#bird"/>
-      <animateTransform
-        attributeName="transform"
-        type="translate"
-        additive="sum"
-        values="0 0;30 -6;0 0"
-        dur="8s"
-        repeatCount="indefinite"/>
+    <!-- Periodische Wellen: 240 Pixel pro Wiederholung -->
+    <g fill="none" stroke-linecap="round">
+      <path class="wave-a"
+            d="M0 275q60 -7 120 0t120 0t120 0t120 0
+               t120 0t120 0t120 0t120 0t120 0t120 0t120 0t120 0"
+            stroke="#d5e6df" stroke-opacity=".2"/>
+
+      <path class="wave-b"
+            d="M0 310q60 -9 120 0t120 0t120 0t120 0
+               t120 0t120 0t120 0t120 0t120 0t120 0t120 0t120 0"
+            stroke="#b5d7d5" stroke-width="1.5" stroke-opacity=".22"/>
+
+      <path class="wave-c"
+            d="M0 352q60 -10 120 0t120 0t120 0t120 0
+               t120 0t120 0t120 0t120 0t120 0t120 0t120 0t120 0"
+            stroke="#91c2c5" stroke-width="2" stroke-opacity=".18"/>
     </g>
 
-    <!-- Kleine fliegende Moewe 3 -->
-    <g transform="translate(710 62) scale(.8)">
-      <use href="#bird"/>
-      <animateTransform
-        attributeName="transform"
-        type="translate"
-        additive="sum"
-        values="0 0;-35 -8;0 0"
-        dur="9s"
-        repeatCount="indefinite"/>
+    <!-- Strand im Vordergrund -->
+    <path d="M0 335C139 336 202 381 362 405
+             S661 448 834 440H0Z"
+          fill="url(#sand)"/>
+
+    <path d="M-20 328C128 328 213 375 368 399
+             S651 440 829 445"
+          fill="none" stroke="#8fb9bb" stroke-width="19" opacity=".32"/>
+
+    <g class="shore">
+      <path d="M-20 332C130 332 210 380 365 404
+               S650 445 830 449"
+            fill="none" stroke="#f0f3df" stroke-width="3"/>
+      <path d="M-20 341C130 341 210 387 365 412"
+            fill="none" stroke="#fff0d5" stroke-width="1" opacity=".5"/>
     </g>
 
-    <!-- Kleine fliegende Moewe 4 -->
-    <g transform="translate(780 105) scale(.5)">
-      <use href="#bird"/>
-      <animateTransform
-        attributeName="transform"
-        type="translate"
-        additive="sum"
-        values="0 0;-28 4;0 0"
-        dur="6s"
-        repeatCount="indefinite"/>
+    <!-- Küstenfelsen -->
+    <path d="M1065 440l27 -30 22 -4 15 -21 27 7 16 -12
+             28 8v52Z" fill="#102c39"/>
+    <path d="M1102 412l28 -19 23 8 19 -13 28 10"
+          fill="none" stroke="#587078" stroke-opacity=".35"/>
+
+    <!-- Kleine Strandgräser -->
+    <g fill="none" stroke="#394846" stroke-linecap="round">
+      <path d="M42 440q4 -34 -9 -55 M43 440q15 -40 29 -48
+               M43 440q-8 -27 -22 -34 M52 440q6 -25 19 -32"
+            stroke-width="2"/>
+      <path d="M91 440q-3 -21 -13 -32 M92 440q8 -30 19 -39"
+            stroke-width="1.5"/>
     </g>
 
-    <!-- Dunkle Kuestensilhouette -->
-    <path d="M0 328 L0 256
-             Q90 246 145 278
-             Q196 303 265 330 Z"
-          fill="#172D35"
-          opacity=".8"/>
+    <!-- Möwen hinter dem Schriftzug -->
+    <g color="#f7eee1">
+      <g transform="translate(207 124)">
+        <g class="bird-a"><use href="#gull"/></g>
+      </g>
+      <g transform="translate(334 87) scale(.58)" opacity=".75">
+        <g class="bird-c"><use href="#gull"/></g>
+      </g>
+      <g transform="translate(995 104) scale(.88)" opacity=".9">
+        <g class="bird-b"><use href="#gull"/></g>
+      </g>
+      <g transform="translate(1080 153) scale(.5)" opacity=".65">
+        <g class="bird-c"><use href="#gull"/></g>
+      </g>
+    </g>
 
-    <!-- Dein Name -->
-    <text x="450" y="178"
-          text-anchor="middle"
-          font-family="Georgia, serif"
-          font-size="68"
-          font-weight="400"
-          letter-spacing="10"
-          fill="#FFF7EB">
-      MARTIN LEMA
+    <g color="#254858" opacity=".65">
+      <g transform="translate(733 221) scale(.35)">
+        <g class="bird-b"><use href="#gull"/></g>
+      </g>
+      <g transform="translate(454 245) scale(.28)">
+        <g class="bird-a"><use href="#gull"/></g>
+      </g>
+    </g>
+
+    <!-- Dezente Abdunklung an den Rändern -->
+    <path d="M0 0h1200v440H0z" fill="url(#vignette)"/>
+
+    <!-- Name -->
+    <text x="600" y="211" text-anchor="middle"
+          class="name" fill="url(#letters)" filter="url(#textShadow)">
+      Martin Lema
     </text>
 
-    <!-- Dezente Unterstreichung -->
-    <path d="M335 195 H565"
-          stroke="#F3DFC8"
-          stroke-width="1"
-          opacity=".7"/>
+    <!-- Feine Zierlinie -->
+    <g stroke="#ffe0b6" fill="none" opacity=".6">
+      <path d="M509 239H579 M621 239H691" stroke-width="1"/>
+      <path d="M595 239l5 -4 5 4 -5 4Z" stroke-width="1"/>
+    </g>
 
+    <rect x=".5" y=".5" width="1199" height="439" rx="22"
+          fill="none" stroke="#ffffff" stroke-opacity=".12"/>
   </g>
 </svg>
