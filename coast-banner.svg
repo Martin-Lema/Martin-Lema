@@ -1,703 +1,412 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="bannerTitle bannerDesc">
-  <title id="bannerTitle">Martin Lema — Blue Jay</title>
-  <desc id="bannerDesc">A cinematic animated landscape with a detailed blue jay perched on a branch, distant mountains, drifting clouds, flying birds, and elegant typography displaying Martin Lema.</desc>
+svg xmlns="http://www.w3.org/2000/svg"
+     width="1440" height="560" viewBox="0 0 1440 560"
+     role="img" aria-labelledby="title description">
+
+  <title id="title">Martin Lema</title>
+  <desc id="description">
+    Eine animierte Küste mit türkisfarbenen Wellen, goldener Sonne,
+    fliegenden Möwen und einem schwebenden, schimmernden Schriftzug.
+  </desc>
 
   <defs>
-    <!-- ATMOSPHERE -->
-    <linearGradient id="sky" x1="0" y1="0" x2=".15" y2="1">
-      <stop offset="0%" stop-color="#071526"/>
-      <stop offset="38%" stop-color="#122b43"/>
-      <stop offset="76%" stop-color="#31536a"/>
-      <stop offset="100%" stop-color="#668393"/>
+    <!-- FARBEN -->
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop stop-color="#030b19"/>
+      <stop offset=".42" stop-color="#102d46"/>
+      <stop offset=".75" stop-color="#52747d"/>
+      <stop offset="1" stop-color="#e6ad82"/>
     </linearGradient>
 
-    <radialGradient id="horizonGlow">
-      <stop offset="0%" stop-color="#b5d3dc" stop-opacity=".42"/>
-      <stop offset="30%" stop-color="#82adc1" stop-opacity=".19"/>
-      <stop offset="70%" stop-color="#668fa8" stop-opacity=".055"/>
-      <stop offset="100%" stop-color="#668fa8" stop-opacity="0"/>
+    <linearGradient id="ocean" x2=".15" y2="1">
+      <stop stop-color="#538d94"/>
+      <stop offset=".23" stop-color="#14566a"/>
+      <stop offset=".65" stop-color="#073244"/>
+      <stop offset="1" stop-color="#021521"/>
+    </linearGradient>
+
+    <radialGradient id="halo">
+      <stop stop-color="#ffe1af" stop-opacity=".65"/>
+      <stop offset=".35" stop-color="#ffba80" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#ffba80" stop-opacity="0"/>
     </radialGradient>
 
-    <linearGradient id="moon" x1=".1" y1="0" x2=".85" y2="1">
-      <stop offset="0%" stop-color="#eff8f5"/>
-      <stop offset="100%" stop-color="#a7cad2"/>
+    <linearGradient id="sun" x2="0" y2="1">
+      <stop stop-color="#fff9db"/>
+      <stop offset="1" stop-color="#ffc28c"/>
     </linearGradient>
 
-    <linearGradient id="mountainFar" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#6e8c9e" stop-opacity=".62"/>
-      <stop offset="100%" stop-color="#294a62" stop-opacity=".78"/>
+    <linearGradient id="reflection" x2="0" y2="1">
+      <stop stop-color="#ffe5b2" stop-opacity=".55"/>
+      <stop offset=".5" stop-color="#efc696" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#efc696" stop-opacity="0"/>
     </linearGradient>
 
-    <linearGradient id="mountainMid" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#385a72"/>
-      <stop offset="100%" stop-color="#142e45"/>
+    <linearGradient id="sand" x2=".7" y2="1">
+      <stop stop-color="#d4c0a4"/>
+      <stop offset=".35" stop-color="#8d9490"/>
+      <stop offset="1" stop-color="#243d49"/>
     </linearGradient>
 
-    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#456c81"/>
-      <stop offset="30%" stop-color="#21495f"/>
-      <stop offset="100%" stop-color="#091d31"/>
+    <linearGradient id="cliff" x2=".8" y2="1">
+      <stop stop-color="#183e4b"/>
+      <stop offset="1" stop-color="#020e19"/>
     </linearGradient>
 
-    <linearGradient id="shore" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#16354a"/>
-      <stop offset="100%" stop-color="#071524"/>
+    <linearGradient id="nameFill" x2=".2" y2="1">
+      <stop stop-color="#ffffff"/>
+      <stop offset=".48" stop-color="#eaf8f6"/>
+      <stop offset="1" stop-color="#8ec4ce"/>
     </linearGradient>
 
-    <linearGradient id="vignette" x1="0" y1="0" x2="1" y2=".6">
-      <stop offset="0%" stop-color="#020b17" stop-opacity=".35"/>
-      <stop offset="45%" stop-color="#020b17" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#020b17" stop-opacity=".19"/>
+    <!-- Breites Lichtband, das durch die Buchstaben läuft -->
+    <linearGradient id="shine"
+                    gradientUnits="userSpaceOnUse"
+                    x1="-600" y1="0" x2="0" y2="150">
+      <stop stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset=".38" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#ffffff" stop-opacity=".95"/>
+      <stop offset=".62" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+      <animateTransform attributeName="gradientTransform"
+                        type="translate"
+                        values="-300 0;2100 0;2100 0"
+                        keyTimes="0;.65;1"
+                        dur="8s" repeatCount="indefinite"/>
     </linearGradient>
 
-    <linearGradient id="branch" x1="0" y1="0" x2=".7" y2="1">
-      <stop offset="0%" stop-color="#61747d"/>
-      <stop offset="26%" stop-color="#344858"/>
-      <stop offset="65%" stop-color="#182d3e"/>
-      <stop offset="100%" stop-color="#081828"/>
-    </linearGradient>
-
-    <!-- BLUE JAY PALETTE -->
-    <linearGradient id="jayBody" x1=".1" y1=".2" x2=".95" y2=".8">
-      <stop offset="0%" stop-color="#f1f1e8"/>
-      <stop offset="27%" stop-color="#d4dee1"/>
-      <stop offset="62%" stop-color="#a2b9c8"/>
-      <stop offset="100%" stop-color="#637f9c"/>
-    </linearGradient>
-
-    <linearGradient id="jayHead" x1=".1" y1="0" x2=".85" y2="1">
-      <stop offset="0%" stop-color="#d8e8ee"/>
-      <stop offset="38%" stop-color="#b6cede"/>
-      <stop offset="100%" stop-color="#6688b0"/>
-    </linearGradient>
-
-    <linearGradient id="jayWing" x1="0" y1="0" x2=".9" y2="1">
-      <stop offset="0%" stop-color="#91bce5"/>
-      <stop offset="25%" stop-color="#517fb3"/>
-      <stop offset="65%" stop-color="#285482"/>
-      <stop offset="100%" stop-color="#142f56"/>
-    </linearGradient>
-
-    <linearGradient id="jayTail" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#83b4e3"/>
-      <stop offset="55%" stop-color="#3c73ac"/>
-      <stop offset="100%" stop-color="#152c52"/>
-    </linearGradient>
-
-    <linearGradient id="jayBeak" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#596d79"/>
-      <stop offset="55%" stop-color="#202e3c"/>
-      <stop offset="100%" stop-color="#0a1421"/>
-    </linearGradient>
-
-    <radialGradient id="eyeShine">
-      <stop offset="0%" stop-color="#182332"/>
-      <stop offset="75%" stop-color="#07111c"/>
-      <stop offset="100%" stop-color="#020711"/>
+    <radialGradient id="vignette" rx=".7">
+      <stop offset=".35" stop-color="#010815" stop-opacity="0"/>
+      <stop offset="1" stop-color="#010815" stop-opacity=".72"/>
     </radialGradient>
 
-    <!-- TYPOGRAPHY MASKS -->
-    <clipPath id="revealOne">
-      <rect x="65" y="91" width="630" height="116"/>
+    <filter id="nameShadow" x="-30%" y="-70%" width="160%" height="250%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10"
+                    flood-color="#010a15" flood-opacity=".8"/>
+    </filter>
+
+    <filter id="glow" x="-50%" y="-100%" width="200%" height="300%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+
+    <clipPath id="frame">
+      <rect width="1440" height="560" rx="26"/>
     </clipPath>
 
-    <clipPath id="revealTwo">
-      <rect x="65" y="204" width="630" height="113"/>
-    </clipPath>
+    <!-- Gemeinsame Textform für Farbe, Glow und Lichtreflex -->
+    <text id="name" x="720" y="276"
+          text-anchor="middle"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-size="112" font-weight="400"
+          letter-spacing="12">Martin Lema</text>
 
-    <clipPath id="canvas">
-      <rect width="1200" height="400"/>
-    </clipPath>
-
-    <!-- FOREST SILHOUETTES -->
-    <g id="pine">
-      <path d="M0 0 L-4 15 L-2 14 L-10 32 L-5 30 L-16 53 L-9 50 L-21 72 L-13 69 L-26 91 L25 91 L13 69 L21 72 L9 50 L16 53 L5 30 L10 32 L2 14 L4 15 Z" fill="currentColor"/>
-      <path d="M0 7 L0 101" stroke="currentColor" stroke-width="3"/>
+    <!-- Möwenflügel bewegen sich um ihren gemeinsamen Ursprung -->
+    <g id="gull" fill="none" stroke="currentColor"
+       stroke-width="2" stroke-linecap="round">
+      <path d="M0 0Q-12 -15 -29 -9">
+        <animateTransform attributeName="transform" type="rotate"
+                          values="-9;14;-9" dur="2.8s"
+                          repeatCount="indefinite"/>
+      </path>
+      <path d="M0 0Q12 -15 29 -9">
+        <animateTransform attributeName="transform" type="rotate"
+                          values="9;-14;9" dur="2.8s"
+                          repeatCount="indefinite"/>
+      </path>
     </g>
 
-    <g id="distantBird">
-      <path d="M-11 1 Q-6 -4 0 0 Q6 -4 11 1 Q5 -1 0 3 Q-5 -1 -11 1Z" fill="currentColor"/>
-    </g>
+    <!-- Nahtlos wiederholbare Wellen -->
+    <pattern id="ripple" width="240" height="38"
+             patternUnits="userSpaceOnUse">
+      <path d="M0 18Q60 9 120 18T240 18"
+            fill="none" stroke="#a0e2df"
+            stroke-width="1" opacity=".22"/>
+      <path d="M32 32h45M162 5h36"
+            stroke="#c8ece6" stroke-width="1" opacity=".12"/>
+    </pattern>
 
-    <!-- STYLIZED BLOSSOM -->
-    <g id="flower">
-      <ellipse cx="0" cy="-5" rx="2.7" ry="5" fill="#b6a6c5"/>
-      <ellipse cx="4.8" cy="-1.3" rx="2.7" ry="5" transform="rotate(72 4.8 -1.3)" fill="#d0b4d0"/>
-      <ellipse cx="2.9" cy="4" rx="2.7" ry="5" transform="rotate(144 2.9 4)" fill="#a98eb9"/>
-      <ellipse cx="-2.9" cy="4" rx="2.7" ry="5" transform="rotate(-144 -2.9 4)" fill="#d2b9d3"/>
-      <ellipse cx="-4.8" cy="-1.3" rx="2.7" ry="5" transform="rotate(-72 -4.8 -1.3)" fill="#c0a2c7"/>
-      <circle r="2" fill="#f8dbad"/>
-    </g>
+    <style>
+      .float {
+        animation: float 7s ease-in-out infinite;
+      }
+
+      .name-glow {
+        animation: breathe 6s ease-in-out infinite;
+      }
+
+      .water {
+        animation: water 15s linear infinite;
+      }
+
+      .swell-one {
+        animation: swell 9s ease-in-out infinite;
+      }
+
+      .swell-two {
+        animation: swell 11s ease-in-out -4s infinite;
+      }
+
+      .foam {
+        animation: foam 8s ease-in-out infinite;
+      }
+
+      .glint {
+        animation: glint 4s ease-in-out infinite;
+      }
+
+      .glint-two {
+        animation: glint 5s ease-in-out -2s infinite;
+      }
+
+      .cloud {
+        animation: cloud 24s ease-in-out infinite alternate;
+      }
+
+      .star {
+        animation: glint 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-9px); }
+      }
+
+      @keyframes breathe {
+        0%, 100% { opacity: .15; }
+        50% { opacity: .38; }
+      }
+
+      @keyframes water {
+        from { transform: translateX(0); }
+        to { transform: translateX(-240px); }
+      }
+
+      @keyframes swell {
+        0%, 100% { transform: translate(0, 0); }
+        50% { transform: translate(-28px, 8px); }
+      }
+
+      @keyframes foam {
+        0%, 100% { transform: translateY(0); opacity: .35; }
+        50% { transform: translateY(-9px); opacity: .85; }
+      }
+
+      @keyframes glint {
+        0%, 100% { opacity: .2; }
+        50% { opacity: .85; }
+      }
+
+      @keyframes cloud {
+        from { transform: translateX(-20px); }
+        to { transform: translateX(35px); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * { animation: none !important; }
+      }
+    </style>
   </defs>
 
-  <style>
-    .cloud-near {
-      animation: cloudNear 16s ease-in-out infinite alternate;
-    }
+  <g clip-path="url(#frame)">
+    <!-- NACHTBLAUER HIMMEL -->
+    <path fill="url(#sky)" d="M0 0h1440v560H0z"/>
 
-    .cloud-far {
-      animation: cloudFar 23s ease-in-out infinite alternate;
-    }
-
-    .mountain-drift {
-      animation: mountainDrift 19s ease-in-out infinite alternate;
-    }
-
-    .mist {
-      animation: mistFloat 13s ease-in-out infinite alternate;
-    }
-
-    .water-light {
-      animation: waterLight 5.5s ease-in-out infinite alternate;
-    }
-
-    .bird-flight-one {
-      animation: birdFlight 22s linear infinite;
-    }
-
-    .bird-flight-two {
-      animation: birdFlight 27s linear infinite -9s;
-    }
-
-    .bird-flight-three {
-      animation: birdFlight 31s linear infinite -17s;
-    }
-
-    .jay-breathe {
-      animation: breathe 5.8s ease-in-out infinite;
-    }
-
-    .jay-head-motion {
-      transform-box: fill-box;
-      transform-origin: 70% 87%;
-      animation: headMotion 9s ease-in-out infinite;
-    }
-
-    .jay-wing-motion {
-      transform-box: fill-box;
-      transform-origin: 35% 20%;
-      animation: wingMotion 7.3s ease-in-out infinite;
-    }
-
-    .jay-tail-motion {
-      transform-box: fill-box;
-      transform-origin: 10% 5%;
-      animation: tailMotion 6.8s ease-in-out infinite;
-    }
-
-    .jay-blink {
-      transform-box: fill-box;
-      transform-origin: center;
-      animation: blink 8.3s ease-in-out infinite;
-    }
-
-    .branch-sway {
-      transform-box: fill-box;
-      transform-origin: 95% 100%;
-      animation: branchSway 8s ease-in-out infinite;
-    }
-
-    .petal-one {
-      animation: petalFall 13s linear infinite;
-    }
-
-    .petal-two {
-      animation: petalFall 16s linear infinite -7s;
-    }
-
-    .petal-three {
-      animation: petalFall 18s linear infinite -12s;
-    }
-
-    .name-martin {
-      animation: nameReveal 1.9s cubic-bezier(.16,1,.3,1) .25s both;
-    }
-
-    .name-lema {
-      animation: nameReveal 2s cubic-bezier(.16,1,.3,1) .48s both;
-    }
-
-    .name-accent {
-      transform-origin: 70px 326px;
-      animation: accentReveal 1.6s cubic-bezier(.16,1,.3,1) 1.15s both;
-    }
-
-    .intro-fade {
-      animation: softReveal 2.6s ease-out .5s both;
-    }
-
-    .light-particle {
-      animation: particleGlow 5s ease-in-out infinite alternate;
-    }
-
-    @keyframes cloudNear {
-      from { transform: translateX(-14px); }
-      to { transform: translateX(19px); }
-    }
-
-    @keyframes cloudFar {
-      from { transform: translateX(16px); }
-      to { transform: translateX(-19px); }
-    }
-
-    @keyframes mountainDrift {
-      from { transform: translateX(-3px); }
-      to { transform: translateX(4px); }
-    }
-
-    @keyframes mistFloat {
-      from { transform: translate(0,0); opacity: .35; }
-      to { transform: translate(17px,-3px); opacity: .63; }
-    }
-
-    @keyframes waterLight {
-      0%,100% { opacity: .32; }
-      50% { opacity: .77; }
-    }
-
-    @keyframes birdFlight {
-      0% { transform: translate(-55px,11px); opacity: 0; }
-      12% { opacity: .0; }
-      23% { opacity: .55; }
-      72% { opacity: .48; }
-      90%,100% { transform: translate(115px,-18px); opacity: 0; }
-    }
-
-    @keyframes breathe {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-2.3px); }
-    }
-
-    @keyframes headMotion {
-      0%,22%,70%,100% { transform: rotate(0deg); }
-      32%,47% { transform: rotate(-3deg); }
-      58% { transform: rotate(1.2deg); }
-    }
-
-    @keyframes wingMotion {
-      0%,37%,100% { transform: rotate(0deg); }
-      50% { transform: rotate(-1.8deg) translateY(-1px); }
-      66% { transform: rotate(.6deg); }
-    }
-
-    @keyframes tailMotion {
-      0%,100% { transform: rotate(0deg); }
-      50% { transform: rotate(2.1deg); }
-    }
-
-    @keyframes blink {
-      0%,42%,44%,74%,76%,100% { transform: scaleY(1); }
-      43%,75% { transform: scaleY(.08); }
-    }
-
-    @keyframes branchSway {
-      0%,100% { transform: rotate(0deg); }
-      50% { transform: rotate(.75deg); }
-    }
-
-    @keyframes petalFall {
-      0% { transform: translate(0,-13px) rotate(0deg); opacity: 0; }
-      12% { opacity: .7; }
-      82% { opacity: .6; }
-      100% { transform: translate(-56px,88px) rotate(175deg); opacity: 0; }
-    }
-
-    @keyframes nameReveal {
-      0% { transform: translateY(110px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
-
-    @keyframes accentReveal {
-      from { transform: scaleX(0); opacity: 0; }
-      to { transform: scaleX(1); opacity: 1; }
-    }
-
-    @keyframes softReveal {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes particleGlow {
-      0% { opacity: .12; }
-      100% { opacity: .68; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        animation: none !important;
-      }
-    }
-  </style>
-
-  <g clip-path="url(#canvas)">
-
-    <!-- SKY -->
-    <rect width="1200" height="400" fill="url(#sky)"/>
-
-    <ellipse cx="858" cy="171" rx="410" ry="295" fill="url(#horizonGlow)"/>
-
-    <!-- CELESTIAL DETAILS -->
-    <g opacity=".7">
-      <circle cx="784" cy="68" r="37" fill="#d6ecf0" opacity=".035"/>
-      <circle cx="784" cy="68" r="28" fill="url(#moon)" opacity=".32"/>
-      <circle cx="778" cy="61" r="28" fill="#244359" opacity=".22"/>
+    <!-- Vereinzelte Lichtpunkte -->
+    <g fill="#e5f6ff">
+      <circle class="star" cx="175" cy="61" r="1.2"/>
+      <circle cx="402" cy="92" r=".8" opacity=".4"/>
+      <circle class="star" cx="655" cy="45" r="1"/>
+      <circle cx="905" cy="72" r=".8" opacity=".35"/>
+      <circle class="star" cx="1264" cy="54" r="1.1"/>
+      <circle cx="1120" cy="104" r=".7" opacity=".4"/>
     </g>
 
-    <g fill="#d9eaf2">
-      <circle cx="68" cy="61" r=".8" opacity=".55"/>
-      <circle cx="183" cy="87" r="1" opacity=".3"/>
-      <circle cx="367" cy="44" r=".7" opacity=".58"/>
-      <circle cx="497" cy="69" r=".8" opacity=".45"/>
-      <circle cx="673" cy="35" r=".8" opacity=".6"/>
-      <circle cx="896" cy="44" r=".9" opacity=".46"/>
-      <circle cx="1100" cy="76" r=".7" opacity=".55"/>
-      <circle cx="1169" cy="30" r="1" opacity=".36"/>
+    <!-- SONNENUNTERGANG -->
+    <ellipse cx="1050" cy="292" rx="360" ry="255" fill="url(#halo)"/>
+    <circle cx="1050" cy="276" r="62" fill="url(#sun)"/>
+    <path d="M972 294h156M984 302h132"
+          stroke="#edbb93" stroke-width="2" opacity=".35"/>
+
+    <!-- Langsame, feine Wolken -->
+    <g class="cloud" fill="none" stroke-linecap="round">
+      <path d="M755 147Q956 126 1233 150"
+            stroke="#f3c5a4" stroke-width="3" opacity=".13"/>
+      <path d="M865 163Q1057 150 1350 172"
+            stroke="#f3c5a4" stroke-width="2" opacity=".12"/>
+      <path d="M59 122Q244 103 464 124"
+            stroke="#d0e8ee" stroke-width="2" opacity=".08"/>
     </g>
 
-    <!-- CINEMATIC CLOUD FORMATIONS -->
-    <g class="cloud-far" fill="#c0d5dd">
-      <path d="M-40 122 C45 111 111 112 187 119 C247 124 302 123 346 119 C272 135 184 136 107 131 C44 128 -8 131 -40 135Z" opacity=".075"/>
-      <path d="M372 104 C437 98 492 101 561 106 C602 110 648 107 686 104 C630 116 570 117 509 113 C454 111 413 114 372 114Z" opacity=".09"/>
-      <path d="M843 104 C905 95 977 97 1047 102 C1115 106 1175 102 1240 96 L1240 112 C1154 118 1100 115 1027 111 C948 107 900 116 843 114Z" opacity=".075"/>
-    </g>
+    <!-- FERNE KÜSTE -->
+    <path d="M0 302V249L39 255 77 240 104 259 142 263
+             185 280 228 277 270 296 340 304Z"
+          fill="#183a4b" opacity=".8"/>
+    <path d="M1203 307l47 -17 28 3 31 -19 43 10 42 -13 46 11v35Z"
+          fill="#234858" opacity=".6"/>
 
-    <g class="cloud-near" fill="#d6e5eb">
-      <path d="M414 152 C480 142 551 146 612 151 C665 155 704 149 742 147 C683 160 609 161 546 157 C488 153 457 160 414 158Z" opacity=".08"/>
-      <path d="M894 166 C956 156 1024 155 1082 161 C1134 166 1184 163 1240 157 L1240 175 C1158 171 1119 176 1058 170 C993 163 937 174 894 174Z" opacity=".085"/>
-    </g>
+    <!-- MEER -->
+    <path d="M0 309H1440V560H0Z" fill="url(#ocean)"/>
+    <path d="M0 309H1440" stroke="#f3dfbc" opacity=".4"/>
 
-    <!-- FAR MOUNTAIN RANGE -->
-    <g class="mountain-drift">
-      <path d="M-30 277 L43 240 L79 251 L145 199 L178 211 L246 158 L280 177 L336 216 L391 189 L442 222 L507 177 L553 203 L618 166 L679 215 L734 185 L793 225 L864 187 L935 240 L1004 207 L1080 243 L1151 209 L1230 257 L1230 350 L-30 350Z" fill="url(#mountainFar)"/>
+    <!-- Lichtstrasse auf dem Wasser -->
+    <path d="M1020 310h60l132 250H884Z" fill="url(#reflection)"/>
 
-      <path d="M208 183 L246 158 L280 177 L262 174 L248 170 L239 177 L230 175Z" fill="#d2e4e7" opacity=".44"/>
-      <path d="M490 193 L507 177 L553 203 L528 192 L516 193 L509 187Z" fill="#e1eaeb" opacity=".25"/>
-      <path d="M603 181 L618 166 L650 192 L626 181 L619 177 L612 183Z" fill="#dae9ed" opacity=".39"/>
-      <path d="M845 200 L864 187 L890 205 L870 197 L863 195 L857 201Z" fill="#cce0e7" opacity=".22"/>
-
-      <path d="M-20 282 C142 251 251 275 380 253 C520 230 645 270 778 250 C951 228 1082 258 1220 247 L1220 315 L-20 315Z" fill="#a8c0cd" opacity=".055"/>
-    </g>
-
-    <!-- MIDGROUND RIDGES -->
-    <path d="M-30 307 C53 283 91 255 139 257 C197 255 247 296 306 285 C382 270 412 239 463 246 C527 254 557 286 634 285 C701 282 738 246 788 252 C859 261 904 294 964 285 C1041 272 1122 248 1230 275 L1230 370 L-30 370Z" fill="url(#mountainMid)" opacity=".8"/>
-
-    <!-- WATER AND COAST -->
-    <path d="M0 288 C174 285 314 293 468 288 C634 282 795 289 946 284 C1052 282 1147 287 1200 285 L1200 400 L0 400Z" fill="url(#water)"/>
-
-    <g class="mist">
-      <path d="M-10 278 C165 269 312 276 457 274 C613 269 772 274 901 271 C1035 268 1118 272 1210 268 L1210 287 C1080 283 997 287 855 286 C677 284 575 288 435 286 C276 286 128 287 -10 290Z" fill="#d4e5e9" opacity=".11"/>
-      <path d="M398 301 C527 295 628 301 757 297 C850 293 952 297 1048 296 C972 304 866 305 749 303 C610 306 500 306 398 301Z" fill="#e2eff2" opacity=".075"/>
-    </g>
-
-    <!-- WATER HIGHLIGHTS -->
-    <g fill="none" stroke="#bed9e3" stroke-linecap="round">
-      <path d="M45 304 H181 M222 307 H283 M365 300 H490 M538 308 H620" stroke-width="1" opacity=".13"/>
-      <path d="M643 295 H758 M794 306 H882 M1050 301 H1127" stroke-width="1.1" opacity=".2"/>
-      <path d="M112 325 H213 M279 318 H340 M412 335 H499 M566 325 H662" stroke-width=".8" opacity=".17"/>
-      <path d="M38 355 H141 M187 348 H276 M352 359 H438 M538 347 H627 M705 355 H802" stroke-width=".9" opacity=".13"/>
-      <path d="M815 322 H914 M990 335 H1072 M1100 346 H1180" stroke-width=".7" opacity=".14"/>
-    </g>
-
-    <g class="water-light" stroke="#d7e7ed" fill="none" stroke-linecap="round">
-      <path d="M743 290 H816" stroke-width="1.3" opacity=".4"/>
-      <path d="M773 296 H866" stroke-width=".8" opacity=".25"/>
-      <path d="M791 309 H854" stroke-width=".9" opacity=".2"/>
-      <path d="M718 322 H782" stroke-width=".65" opacity=".2"/>
-    </g>
-
-    <!-- DISTANT ISLANDS -->
-    <path d="M0 314 C56 303 97 294 134 301 C174 309 205 318 263 316 C315 314 360 303 403 310 C450 316 494 328 530 334 L0 380Z" fill="#142c3f" opacity=".92"/>
-
-    <path d="M612 325 C672 318 730 314 785 318 C824 321 875 333 923 326 C985 316 1038 316 1091 325 C1138 332 1176 324 1200 315 L1200 381 L612 381Z" fill="#10283b" opacity=".85"/>
-
-    <!-- FOREST ON LEFT HEADLAND -->
-    <g style="color:#0b2435" opacity=".85">
-      <use href="#pine" transform="translate(18 272) scale(.47)"/>
-      <use href="#pine" transform="translate(44 269) scale(.55)"/>
-      <use href="#pine" transform="translate(72 265) scale(.57)"/>
-      <use href="#pine" transform="translate(106 272) scale(.48)"/>
-      <use href="#pine" transform="translate(139 286) scale(.41)"/>
-      <use href="#pine" transform="translate(184 299) scale(.33)"/>
-      <use href="#pine" transform="translate(225 305) scale(.28)"/>
-    </g>
-
-    <!-- DISTANT FOREST -->
-    <g style="color:#17364a" opacity=".64">
-      <use href="#pine" transform="translate(731 277) scale(.36)"/>
-      <use href="#pine" transform="translate(759 270) scale(.43)"/>
-      <use href="#pine" transform="translate(786 276) scale(.38)"/>
-      <use href="#pine" transform="translate(818 284) scale(.3)"/>
-      <use href="#pine" transform="translate(850 289) scale(.27)"/>
-    </g>
-
-    <!-- FLYING BIRDS -->
-    <g color="#dbe7e9">
-      <g class="bird-flight-one" transform="translate(514 133)" opacity=".5">
-        <use href="#distantBird" transform="scale(.7)"/>
-        <use href="#distantBird" transform="translate(27 -12) scale(.46)"/>
-        <use href="#distantBird" transform="translate(-24 15) scale(.35)"/>
+    <g fill="none" stroke="#ffe4b3" stroke-linecap="round">
+      <g class="glint">
+        <path d="M1021 319h61M1009 331h84M1025 348h58
+                 M988 368h101M1017 394h114M965 426h126"
+              stroke-width="2"/>
       </g>
-
-      <g class="bird-flight-two" transform="translate(622 105)" opacity=".36">
-        <use href="#distantBird" transform="scale(.48)"/>
-        <use href="#distantBird" transform="translate(19 8) scale(.3)"/>
-      </g>
-
-      <g class="bird-flight-three" transform="translate(394 169)" opacity=".26">
-        <use href="#distantBird" transform="scale(.5)"/>
-        <use href="#distantBird" transform="translate(-19 9) scale(.31)"/>
+      <g class="glint-two">
+        <path d="M1035 324h28M1025 339h71M1003 358h59
+                 M1035 381h66M986 410h81M1034 448h111"
+              stroke-width="1.5"/>
       </g>
     </g>
 
-    <!-- LOWER FOREGROUND -->
-    <path d="M0 385 C132 374 249 384 334 381 C456 378 563 389 662 377 C747 366 813 371 878 379 C1003 390 1117 366 1200 351 L1200 400 L0 400Z" fill="#071a2b" opacity=".74"/>
-
-    <path d="M0 398 C153 389 274 401 396 391 C543 379 643 398 756 392 C908 383 1008 394 1200 379 L1200 400 L0 400Z" fill="#061421" opacity=".8"/>
-
-    <!-- BRANCH AND BOTANICAL DETAILS -->
-    <g>
-      <path d="M1234 264 C1170 284 1121 293 1075 305 C1024 320 971 326 933 338 C868 358 821 373 759 385" stroke="#071624" stroke-width="25" fill="none" stroke-linecap="round"/>
-
-      <path d="M1234 262 C1173 279 1121 292 1074 304 C1017 320 965 325 933 336 C870 354 821 374 759 384" stroke="url(#branch)" stroke-width="18" fill="none" stroke-linecap="round"/>
-
-      <path d="M1200 275 C1133 294 1097 304 1058 313 C1002 327 953 337 896 352" stroke="#91a1a2" stroke-width="1.4" fill="none" opacity=".38"/>
-
-      <path d="M1177 289 C1161 265 1148 250 1129 233" stroke="#142b3b" stroke-width="7" fill="none" stroke-linecap="round"/>
-      <path d="M1177 288 C1161 265 1148 250 1129 233" stroke="#536675" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-
-      <path d="M1150 254 C1169 240 1180 229 1186 206" stroke="#263d4e" stroke-width="3.2" fill="none" stroke-linecap="round"/>
-      <path d="M1140 242 C1127 220 1117 209 1104 204" stroke="#293f4d" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-
-      <path d="M1109 300 C1098 285 1096 275 1094 266" stroke="#253b4a" stroke-width="3.2" fill="none" stroke-linecap="round"/>
-      <path d="M946 334 C925 319 914 305 904 293" stroke="#1b3445" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-      <path d="M869 357 C851 342 841 331 835 320" stroke="#1b3445" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <!-- Kleine Wellen in der Ferne -->
+    <g opacity=".6">
+      <path class="water" d="M0 325h1680v235H0Z" fill="url(#ripple)"/>
     </g>
 
-    <!-- TINY LEAVES -->
-    <g class="branch-sway">
-      <path d="M1159 264 Q1137 252 1135 239 Q1156 240 1159 264Z" fill="#557c82"/>
-      <path d="M1148 249 Q1159 229 1176 230 Q1167 248 1148 249Z" fill="#71969a"/>
-      <path d="M1122 226 Q1102 227 1096 215 Q1114 211 1122 226Z" fill="#446e78"/>
-      <path d="M1177 229 Q1191 220 1195 203 Q1178 208 1177 229Z" fill="#729b97"/>
-      <path d="M1094 273 Q1079 260 1080 252 Q1096 255 1094 273Z" fill="#4f777c"/>
-      <path d="M901 290 Q885 281 882 274 Q897 272 901 290Z" fill="#3c6471"/>
-      <path d="M837 324 Q820 313 817 305 Q834 307 837 324Z" fill="#426c75"/>
+    <!-- Grosse, weich geschwungene Wasserflächen -->
+    <g class="swell-one">
+      <path d="M-50 391C144 360 278 418 481 393
+               S802 361 1019 395 1312 411 1490 377V560H-50Z"
+            fill="#0c5363" opacity=".33"/>
+      <path d="M-50 391C144 360 278 418 481 393
+               S802 361 1019 395 1312 411 1490 377"
+            fill="none" stroke="#6ac5c9" stroke-opacity=".28"/>
     </g>
 
-    <!-- DELICATE FLOWERS -->
-    <g opacity=".87">
-      <use href="#flower" transform="translate(1130 231) scale(.8)"/>
-      <use href="#flower" transform="translate(1104 204) scale(.58)"/>
-      <use href="#flower" transform="translate(1187 207) scale(.7)"/>
-      <use href="#flower" transform="translate(1094 264) scale(.55)"/>
-      <use href="#flower" transform="translate(904 291) scale(.5)"/>
+    <g class="swell-two">
+      <path d="M-50 447C165 403 330 475 569 441
+               S929 419 1112 449 1325 465 1490 431V560H-50Z"
+            fill="#032b3d" opacity=".65"/>
+      <path d="M-50 447C165 403 330 475 569 441
+               S929 419 1112 449 1325 465 1490 431"
+            fill="none" stroke="#8bddd6" stroke-opacity=".25"
+            stroke-width="2"/>
     </g>
 
-    <!-- FLOATING PETALS -->
-    <g>
-      <path class="petal-one" d="M1160 214 Q1165 210 1169 216 Q1167 221 1163 222 Q1160 219 1160 214Z" fill="#dec5d4" opacity=".6"/>
-      <path class="petal-two" d="M1120 240 Q1125 236 1127 241 Q1125 247 1121 247Z" fill="#c4a9c8" opacity=".55"/>
-      <path class="petal-three" d="M1182 197 Q1186 193 1191 198 Q1187 204 1183 203Z" fill="#e5cbd7" opacity=".5"/>
+    <!-- GESCHWUNGENER STRAND -->
+    <path d="M-30 397C102 401 174 449 300 478
+             C470 520 617 513 790 560H-30Z"
+          fill="url(#sand)"/>
+
+    <!-- Türkisfarbene Brandung -->
+    <path d="M-30 391C102 395 174 443 300 472
+             C470 514 617 507 790 554"
+          fill="none" stroke="#47c7c9" stroke-width="24"
+          opacity=".13"/>
+
+    <g class="foam" fill="none">
+      <path d="M-30 394C102 398 174 446 300 475
+               C470 517 617 510 790 557"
+            stroke="#dafcf0" stroke-width="3"/>
+      <path d="M-30 401C102 405 174 453 300 482
+               C470 524 617 517 790 564"
+            stroke="#d3f8ec" stroke-width="1" opacity=".5"/>
     </g>
 
-    <!-- THE BLUE JAY: ORIGINAL VECTOR ILLUSTRATION -->
-    <g transform="translate(847 58) scale(.98)">
-      <g class="jay-breathe">
+    <!-- KÜSTENFELSEN RECHTS -->
+    <path d="M1154 560l43 -39 31 -7 18 -38 33 -12
+             22 -31 31 8 31 -24 32 15 45 -10v138Z"
+          fill="url(#cliff)"/>
+    <path d="M1202 522l39 -13 19 -35 24 -4 20 -27
+             28 9 33 -23 30 11"
+          fill="none" stroke="#5c7e81" stroke-opacity=".3"/>
+    <path d="M1284 470l-9 42 22 48M1365 429l-13 57 31 31"
+          fill="none" stroke="#030f1c" stroke-width="3" opacity=".6"/>
 
-        <!-- LONG TAIL FEATHERS -->
-        <g class="jay-tail-motion">
-          <path d="M203 217 C235 244 257 282 274 316 C286 343 296 361 310 378 C283 363 269 342 251 316 C225 281 204 254 187 230Z" fill="#122d51"/>
+    <!-- Dünengras links -->
+    <g fill="none" stroke="#15323b" stroke-linecap="round">
+      <path d="M53 560Q58 512 35 478M54 560Q72 498 96 487
+               M52 560Q38 525 18 513M65 560Q77 526 95 519"
+            stroke-width="2.5"/>
+      <path d="M111 560Q108 532 91 514M112 560Q126 516 145 505
+               M120 560Q134 539 148 537"
+            stroke-width="1.8"/>
+    </g>
 
-          <path d="M211 211 C233 235 262 277 280 320 C291 346 301 370 307 376 C282 353 268 333 247 301 C226 269 203 240 191 224Z" fill="url(#jayTail)"/>
+    <!-- MÖWEN: eigene Flugbahnen und Flügelschläge -->
+    <g color="#f6f5e9">
+      <g>
+        <animateTransform attributeName="transform" type="translate"
+                          values="-100 155;340 115;860 145;1540 92"
+                          keyTimes="0;.3;.65;1"
+                          dur="31s" begin="-8s" repeatCount="indefinite"/>
+        <use href="#gull" transform="scale(.85)"/>
+      </g>
 
-          <path d="M200 221 C221 253 238 293 260 328 C272 348 284 361 298 374 C278 367 258 346 244 328 C220 299 197 257 187 236Z" fill="#81b6e6"/>
+      <g opacity=".8">
+        <animateTransform attributeName="transform" type="translate"
+                          values="-140 122;400 81;970 111;1570 66"
+                          keyTimes="0;.35;.72;1"
+                          dur="37s" begin="-15s" repeatCount="indefinite"/>
+        <use href="#gull" transform="scale(.48)"/>
+      </g>
 
-          <path d="M217 247 Q234 255 244 267" stroke="#ebf3f4" stroke-width="3.6" opacity=".86" fill="none"/>
-          <path d="M230 271 Q249 282 258 294" stroke="#e3edf0" stroke-width="3.3" opacity=".84" fill="none"/>
-          <path d="M242 296 Q258 306 270 322" stroke="#f3f4ed" stroke-width="3" opacity=".78" fill="none"/>
-          <path d="M253 321 Q269 332 280 345" stroke="#cbdce6" stroke-width="2.4" opacity=".7" fill="none"/>
+      <g opacity=".9">
+        <animateTransform attributeName="transform" type="translate"
+                          values="1540 168;1040 119;520 151;-100 99"
+                          keyTimes="0;.34;.7;1"
+                          dur="35s" begin="-5s" repeatCount="indefinite"/>
+        <use href="#gull" transform="scale(.65)"/>
+      </g>
 
-          <path d="M214 241 C241 292 269 341 306 376" stroke="#b2d4ea" stroke-width="1.2" opacity=".6" fill="none"/>
-          <path d="M193 232 C216 286 252 350 299 375" stroke="#182c4d" stroke-width="1.2" opacity=".65" fill="none"/>
-        </g>
-
-        <!-- BACK / SHOULDER -->
-        <path d="M155 127 C176 116 204 122 221 144 C238 166 243 191 237 215 C233 237 223 253 203 264 C187 269 170 254 157 237 C140 215 131 182 134 157 C136 143 144 132 155 127Z" fill="#395f8e"/>
-
-        <path d="M169 127 C187 126 210 140 221 160 C230 181 227 209 219 230 C210 246 206 256 202 258 C213 208 190 160 169 127Z" fill="#7aa5d2" opacity=".38"/>
-
-        <!-- MAIN BODY -->
-        <path d="M128 114 C145 111 169 119 181 134 C193 150 197 180 196 203 C194 223 205 245 201 263 C196 275 175 278 156 266 C133 250 112 224 102 200 C90 173 93 148 105 129 C110 121 118 117 128 114Z" fill="url(#jayBody)"/>
-
-        <!-- CHEST HIGHLIGHTS -->
-        <path d="M113 133 C104 149 107 178 115 198 C122 224 147 252 165 262 C143 257 118 235 107 209 C92 182 91 153 113 133Z" fill="#f5f5ee" opacity=".6"/>
-
-        <path d="M158 141 C167 171 170 202 183 236 C190 254 193 259 197 265" fill="none" stroke="#7a9bb2" stroke-width="2" opacity=".33"/>
-        <path d="M125 164 Q137 177 144 191 M122 187 Q135 201 146 215 M144 218 Q152 229 162 236" fill="none" stroke="#9baeb8" stroke-width="1.3" opacity=".32"/>
-
-        <!-- LOWER BELLY -->
-        <path d="M146 242 C160 256 180 272 198 263 C195 278 181 285 167 278 C155 273 148 260 146 242Z" fill="#d7dfe1"/>
-
-        <!-- FAR FOOT -->
-        <path d="M174 266 C181 278 184 292 177 301" fill="none" stroke="#26333d" stroke-width="4.4" stroke-linecap="round"/>
-        <path d="M177 300 Q183 307 192 302" fill="none" stroke="#15232d" stroke-width="3.3" stroke-linecap="round"/>
-
-        <!-- WING -->
-        <g class="jay-wing-motion">
-          <path d="M173 145 C194 137 216 146 232 166 C247 184 246 207 245 225 C245 247 254 271 263 292 C245 281 225 262 211 247 C190 225 175 194 169 175 C165 163 165 153 173 145Z" fill="#142f55"/>
-
-          <path d="M172 143 C190 136 217 146 232 165 C243 182 243 209 241 225 C233 215 223 207 215 200 C195 182 184 163 172 143Z" fill="url(#jayWing)"/>
-
-          <!-- PRIMARY BLUE FEATHERS -->
-          <path d="M185 159 C204 173 221 196 231 223 C239 244 250 274 263 292 C240 272 221 253 207 226 C195 204 187 178 185 159Z" fill="#335f98"/>
-
-          <path d="M198 167 C217 190 225 219 233 241 C242 263 248 273 258 288 C241 272 225 246 216 222 C206 197 198 177 198 167Z" fill="#6b9bd0"/>
-
-          <path d="M213 182 C225 206 237 235 244 258 C250 276 256 282 263 292 C248 283 236 259 230 240 C222 217 217 195 213 182Z" fill="#204673"/>
-
-          <!-- COVER FEATHERS -->
-          <path d="M171 150 C189 145 204 150 215 163 C223 173 225 183 228 192 C210 188 190 174 180 163Z" fill="#4d80bd"/>
-
-          <path d="M175 151 Q192 154 201 169 Q192 166 182 160Z" fill="#9cc7e9" opacity=".8"/>
-
-          <path d="M181 169 C194 178 202 193 207 209 C194 204 184 190 177 176Z" fill="#83b4e4"/>
-          <path d="M192 175 C205 187 215 205 220 223 C210 217 200 202 193 187Z" fill="#416fa9"/>
-
-          <!-- WHITE AND DARK WING BARRING -->
-          <path d="M178 181 Q192 188 203 200 L209 208 Q199 207 190 200 Q183 192 178 181Z" fill="#e8f1f4"/>
-          <path d="M192 191 Q205 201 215 218 L218 227 Q208 219 202 213 Q196 205 192 191Z" fill="#eaf2f2"/>
-          <path d="M209 204 Q218 217 226 236 L229 244 Q220 237 215 224Z" fill="#edf2ef"/>
-
-          <path d="M182 192 Q192 201 198 214" stroke="#132d50" stroke-width="4" fill="none"/>
-          <path d="M197 205 Q208 219 213 234" stroke="#142c50" stroke-width="3.8" fill="none"/>
-          <path d="M217 226 Q225 243 230 257" stroke="#e7f1f1" stroke-width="3" fill="none"/>
-          <path d="M229 246 Q236 262 244 273" stroke="#a9cbe5" stroke-width="2.5" fill="none"/>
-
-          <!-- INDIVIDUAL FEATHER ENGRAVING -->
-          <path d="M174 158 C187 174 192 200 210 228 C223 252 245 279 260 290" stroke="#a8cde5" stroke-width="1.6" opacity=".73" fill="none"/>
-          <path d="M185 154 C201 178 208 208 223 240 C232 260 249 280 261 290" stroke="#183c6d" stroke-width="1.5" opacity=".8" fill="none"/>
-          <path d="M198 166 C220 199 224 230 237 255 C245 273 254 286 261 291" stroke="#d5e7ef" stroke-width="1.1" opacity=".6" fill="none"/>
-
-          <!-- SMALL SCALLOPED FEATHERS -->
-          <path d="M177 161 Q184 171 191 173 Q194 184 202 187 Q203 199 212 202" stroke="#d5e7f2" stroke-width="2.1" opacity=".68" fill="none"/>
-        </g>
-
-        <!-- NECK AND HEAD -->
-        <g class="jay-head-motion">
-
-          <!-- REAR NECK -->
-          <path d="M111 112 C123 105 145 107 160 118 C171 126 183 138 185 153 C171 146 164 139 149 134 C130 126 114 126 101 131Z" fill="#a6c1d4"/>
-
-          <!-- HEAD SILHOUETTE -->
-          <path d="M77 75 C85 64 101 59 113 58 C122 48 138 42 150 41 C160 39 171 43 180 48 C176 38 173 30 166 23 C183 30 194 41 198 52 C205 61 210 74 207 89 C205 104 194 115 182 125 C170 131 155 130 142 124 C126 117 111 119 102 129 C100 115 98 102 87 94 C77 87 73 81 77 75Z" fill="#243e63"/>
-
-          <!-- CROWN -->
-          <path d="M77 76 C91 65 105 64 117 62 C127 51 140 46 154 45 C170 45 186 53 195 64 C198 77 194 88 184 96 C170 100 158 96 148 92 C128 87 112 88 94 92Z" fill="url(#jayHead)"/>
-
-          <!-- CREST DETAILS -->
-          <path d="M149 47 Q161 35 166 23 Q177 35 182 50Z" fill="#567eac"/>
-          <path d="M155 46 Q169 40 179 41" stroke="#d2e5ec" stroke-width="2" opacity=".7" fill="none"/>
-          <path d="M171 36 Q185 46 191 60" stroke="#162e51" stroke-width="3" fill="none"/>
-          <path d="M183 44 Q197 55 199 70" stroke="#7399be" stroke-width="2" fill="none"/>
-
-          <!-- BLACK FACIAL BAND -->
-          <path d="M108 77 C125 71 139 71 154 77 C170 85 179 92 194 91 C187 101 174 107 160 101 C146 94 139 87 122 86 C114 86 108 85 101 86Z" fill="#101d30"/>
-
-          <!-- CHEEK / WHITE FACIAL PATCH -->
-          <path d="M105 87 C121 86 134 91 145 97 C159 105 174 106 186 99 C181 115 168 123 154 119 C139 114 127 109 113 112 C106 104 102 94 105 87Z" fill="#e4e9e7"/>
-
-          <path d="M114 91 Q134 96 146 105 Q160 114 176 109" stroke="#b2c5cf" stroke-width="2" fill="none" opacity=".65"/>
-
-          <!-- BLACK COLLAR -->
-          <path d="M162 109 C177 113 186 106 192 98 C191 115 184 126 172 134 C160 133 151 126 143 123 C150 122 159 118 162 109Z" fill="#182940"/>
-
-          <path d="M151 118 Q162 127 172 129" stroke="#657f9d" stroke-width="2" fill="none" opacity=".55"/>
-
-          <!-- SOFT THROAT -->
-          <path d="M106 111 C119 113 133 113 143 123 C150 129 154 134 158 141 C140 137 125 127 110 132Z" fill="#d8e4e6"/>
-
-          <!-- BEAK -->
-          <path d="M102 81 C90 77 74 75 61 75 C51 75 43 78 32 81 C47 84 60 87 73 89 C85 91 94 91 103 89Z" fill="url(#jayBeak)"/>
-
-          <path d="M32 81 C48 80 65 81 82 84 C91 85 96 85 103 84" stroke="#9baeb8" stroke-width="1.6" fill="none" opacity=".7"/>
-
-          <path d="M37 82 Q65 87 85 88" stroke="#0b1724" stroke-width="1.8" fill="none"/>
-
-          <path d="M93 84 Q105 77 110 72" stroke="#1c2d3d" stroke-width="2.5" fill="none"/>
-
-          <!-- EYE AND EYE STRIPE -->
-          <path d="M100 76 C109 67 123 66 132 74 C123 71 113 73 105 81Z" fill="#1a2738"/>
-
-          <ellipse cx="117" cy="78" rx="8.2" ry="7.4" fill="#263545"/>
-          <ellipse class="jay-blink" cx="117.6" cy="78" rx="5.1" ry="5.5" fill="url(#eyeShine)"/>
-          <circle cx="115.7" cy="76" r="1.65" fill="#f8faf8" opacity=".9"/>
-          <circle cx="119.5" cy="80.3" r=".8" fill="#b7d3e2" opacity=".65"/>
-
-          <!-- FINE HEAD FEATHER LINES -->
-          <path d="M124 57 Q141 48 156 51 M137 62 Q155 56 176 65 M153 68 Q173 68 190 79" stroke="#e6f0ee" stroke-width="1.25" opacity=".52" fill="none"/>
-
-          <path d="M179 58 Q192 70 190 86" stroke="#1c385e" stroke-width="2" opacity=".65" fill="none"/>
-
-          <path d="M91 69 Q107 64 123 66" stroke="#e7f0f1" stroke-width="1.5" opacity=".48" fill="none"/>
-        </g>
-
-        <!-- NEAR FOOT AND GRIP -->
-        <path d="M188 265 C193 278 195 289 190 297" stroke="#354451" stroke-width="4.6" fill="none" stroke-linecap="round"/>
-        <path d="M190 296 Q196 302 203 297" stroke="#23333c" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-        <path d="M191 297 Q185 302 181 298" stroke="#192935" stroke-width="2.9" fill="none" stroke-linecap="round"/>
-        <path d="M194 297 Q200 304 210 300" stroke="#111e2a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-
-        <!-- DELICATE BODY FEATHER FINISH -->
-        <path d="M106 151 Q102 173 111 196" stroke="#ffffff" stroke-width="1.2" opacity=".22" fill="none"/>
-        <path d="M126 218 Q140 242 158 253" stroke="#ffffff" stroke-width="1.2" opacity=".28" fill="none"/>
-        <path d="M159 259 Q174 271 186 267" stroke="#f3f7f5" stroke-width="1.4" opacity=".35" fill="none"/>
+      <g opacity=".55">
+        <animateTransform attributeName="transform" type="translate"
+                          values="-100 285;590 266;1540 279"
+                          dur="44s" begin="-21s" repeatCount="indefinite"/>
+        <use href="#gull" transform="scale(.3)"/>
       </g>
     </g>
 
-    <!-- FLOATING ATMOSPHERIC PARTICLES -->
-    <g fill="#dcecf0" class="intro-fade">
-      <circle class="light-particle" cx="702" cy="187" r="1.1" opacity=".3"/>
-      <circle class="light-particle" cx="738" cy="226" r=".7" opacity=".25"/>
-      <circle class="light-particle" cx="816" cy="153" r="1" opacity=".35"/>
-      <circle class="light-particle" cx="1140" cy="173" r=".8" opacity=".25"/>
-      <circle class="light-particle" cx="1093" cy="117" r=".7" opacity=".3"/>
-    </g>
+    <!-- FILMISCHE ABDUNKLUNG -->
+    <path d="M0 0h1440v560H0Z" fill="url(#vignette)"/>
 
-    <!-- SUBTLE COLOR GRADING -->
-    <rect width="1200" height="400" fill="url(#vignette)" pointer-events="none"/>
+    <!-- SCHWEBENDER NAME -->
+    <g class="float">
+      <!-- Sanft pulsierendes Licht hinter dem Schriftzug -->
+      <use href="#name" class="name-glow"
+           fill="#82e5ed" filter="url(#glow)"/>
 
-    <!-- EDITORIAL TYPOGRAPHY -->
-    <g font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif" fill="#f2f6f5">
+      <!-- Leicht versetzte Kontur für räumliche Tiefe -->
+      <use href="#name" transform="translate(0 3)"
+           fill="#17495b" stroke="#17495b" stroke-width="1"/>
 
-      <g clip-path="url(#revealOne)">
-        <text class="name-martin"
-              x="72"
-              y="194"
-              font-size="101"
-              font-weight="600"
-              letter-spacing="-5.5"
-              text-rendering="geometricPrecision">Martin</text>
+      <!-- Hauptschrift -->
+      <use href="#name" fill="url(#nameFill)"
+           filter="url(#nameShadow)"/>
+
+      <!-- Animierter Glanz direkt innerhalb der Buchstaben -->
+      <use href="#name" fill="url(#shine)"/>
+
+      <!-- Feine Lichtkante -->
+      <use href="#name" fill="none"
+           stroke="#f0ffff" stroke-width=".45" stroke-opacity=".45"/>
+
+      <!-- Elegante Linie unter dem Namen -->
+      <g transform="translate(720 309)">
+        <path d="M-160 0H-25M25 0H160"
+              stroke="#c4e6e3" stroke-opacity=".45"/>
+        <path d="M0 -5L5 0 0 5 -5 0Z"
+              fill="#e2f5ed" opacity=".8"/>
+        <circle r="11" fill="none"
+                stroke="#c4e6e3" stroke-width=".6" opacity=".3"/>
       </g>
-
-      <g clip-path="url(#revealTwo)">
-        <text class="name-lema"
-              x="67"
-              y="302"
-              font-size="120"
-              font-weight="700"
-              letter-spacing="-7"
-              text-rendering="geometricPrecision">Lema</text>
-      </g>
-
     </g>
 
-    <!-- MINIMAL ACCENT -->
-    <g class="name-accent">
-      <rect x="73" y="324" width="88" height="2" rx="1" fill="#9bc3d7"/>
-      <rect x="168" y="324" width="21" height="2" rx="1" fill="#d4e2e8" opacity=".42"/>
-    </g>
-
-    <!-- FINE BOTTOM EDGE -->
-    <path d="M0 399.5 H1200" stroke="#a7c6d7" stroke-width=".7" opacity=".17"/>
+    <!-- Dezenter Rahmen -->
+    <rect x="12" y="12" width="1416" height="536" rx="19"
+          fill="none" stroke="#c6e9ee" stroke-opacity=".12"/>
+    <path d="M39 12H102M12 39V87M1338 12H1401
+             M1428 39V87M12 473V521M39 548H102
+             M1338 548H1401M1428 473V521"
+          fill="none" stroke="#d8eeeb" stroke-opacity=".35"/>
   </g>
 </svg>
