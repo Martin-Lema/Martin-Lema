@@ -29,6 +29,10 @@ def fixture():
             'primary_languages':{'Python':1,'C++':1},'days':days}
 
 class DataTests(unittest.TestCase):
+    def test_checked_in_profile_is_valid(self):
+        config=json.loads((ROOT/'profile.json').read_text(encoding='utf-8'))
+        build.validate_config(config)
+
     def test_leap_calendar(self):
         data=fixture();self.assertEqual(len(gd.validate_snapshot(data)['days']),366)
         self.assertIn('2024-02-29',[d['date'] for d in data['days']])
