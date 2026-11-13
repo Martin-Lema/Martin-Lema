@@ -1,6 +1,6 @@
 {
   "username": "Martin-lema",
-  "name": "Martin Lema",
+  "name": "Martin-Lema",
   "location": "Switzerland",
   "role": "Apprentice Application Developer",
   "qualification": "Applikationsentwickler EFZ",
@@ -9,12 +9,6 @@
     {"category": "LANGUAGES", "Java": []},
     {"category": "TOOLS", "MySQL": []},
     {"category": "EXPLORING", "items": []}
-  ],
-  "projects": [
-    {"name": "", "description": "", "technologies": [], "repository": ""},
-    {"name": "", "description": "", "technologies": [], "repository": ""},
-    {"name": "", "description": "", "technologies": [], "repository": ""}
-  ],
   "palette": {
     "ink": "#183D43", "deep": "#102D35", "forest": "#28594F",
     "pine": "#427665", "sage": "#89A987", "mint": "#C4D5AE",
