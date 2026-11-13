@@ -97,7 +97,10 @@ def validate_snapshot(data, login=None):
         raise DataError('Snapshot belongs to a different username; run an authenticated update.')
     days=data['days']
     if not isinstance(days,list) or not 1<=len(days)<=367:
-        raise DataError('Calendar must contain 1–367 consecutive dates.')
+        raise DataError(
+    f"Unexpected calendar: type={type(days).__name__}, "
+    f"days={len(days) if isinstance(days, list) else 'not a list'}"
+)
     previous=None
     for day in days:
         current=dt.date.fromisoformat(day['date'])
