@@ -1,22 +1,66 @@
 {
-  "username": "Martin-lema",
-  "name": "Martin-Lema",
+  "username": "Martin-Lema",
+  "name": "Martin Lema",
   "location": "Switzerland",
   "role": "Apprentice Application Developer",
   "qualification": "Applikationsentwickler EFZ",
-  "bio": "I’m Martin, an apprentice application developer in Switzerland.",
+  "bio": "I'm Martin, an apprentice application developer in Switzerland.",
   "technologies": [
-    {"category": "LANGUAGES", "Java": []},
-    {"category": "TOOLS", "MySQL": []},
-    {"category": "EXPLORING", "items": []}
+    {
+      "category": "LANGUAGES",
+      "items": ["Java"]
+    },
+    {
+      "category": "TOOLS",
+      "items": ["MySQL"]
+    },
+    {
+      "category": "EXPLORING",
+      "items": []
+    }
+  ],
+  "projects": [
+    {
+      "name": "",
+      "description": "",
+      "technologies": [],
+      "repository": ""
+    },
+    {
+      "name": "",
+      "description": "",
+      "technologies": [],
+      "repository": ""
+    },
+    {
+      "name": "",
+      "description": "",
+      "technologies": [],
+      "repository": ""
+    }
+  ],
   "palette": {
-    "ink": "#183D43", "deep": "#102D35", "forest": "#28594F",
-    "pine": "#427665", "sage": "#89A987", "mint": "#C4D5AE",
-    "paper": "#F6F1E3", "cream": "#FFF9EA", "sand": "#E7CFAB",
-    "sky": "#E4EDE5", "mist": "#B7CBCD", "mountain": "#8FAFB5",
-    "water": "#699F9E", "foam": "#C2DECF", "blue": "#408FA8",
-    "cobalt": "#316A89", "orange": "#D98252", "gold": "#E8AE68",
-    "rose": "#CE9490", "brown": "#80644F", "night": "#283B51",
+    "ink": "#183D43",
+    "deep": "#102D35",
+    "forest": "#28594F",
+    "pine": "#427665",
+    "sage": "#89A987",
+    "mint": "#C4D5AE",
+    "paper": "#F6F1E3",
+    "cream": "#FFF9EA",
+    "sand": "#E7CFAB",
+    "sky": "#E4EDE5",
+    "mist": "#B7CBCD",
+    "mountain": "#8FAFB5",
+    "water": "#699F9E",
+    "foam": "#C2DECF",
+    "blue": "#408FA8",
+    "cobalt": "#316A89",
+    "orange": "#D98252",
+    "gold": "#E8AE68",
+    "rose": "#CE9490",
+    "brown": "#80644F",
+    "night": "#283B51",
     "lavender": "#A1A3BB"
   }
 }
