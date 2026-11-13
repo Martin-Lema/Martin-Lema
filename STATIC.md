@@ -6,10 +6,6 @@
 
 <p align="center"><sub>S W I T Z E R L A N D &nbsp; / &nbsp; C O D E &nbsp; / &nbsp; C U R I O S I T Y</sub></p>
 
-### A little about me
-
-I’m Martin, an apprentice application developer in Switzerland\. I enjoy programming, creative projects, and learning how to build things a little better every day\.
-
 <p align="center">
   <img src="assets/static/about-forest.svg" width="1200" alt="The forest desk: a small terminal, tall pines and a hopping robin.">
 </p>
@@ -49,18 +45,6 @@ I’m Martin, an apprentice application developer in Switzerland\. I enjoy progr
 <p align="center">
   <img src="assets/static/exploration-map.svg" width="1200" alt="A woodland path with three numbered destinations. Project links follow below.">
 </p>
-
-**01 / [Your project name]**
-
-[Add a short description and your technologies.] · [Set this destination](docs/SETUP.md#featured-projects)
-
-**02 / [Your project name]**
-
-[Add a short description and your technologies.] · [Set this destination](docs/SETUP.md#featured-projects)
-
-**03 / [Your project name]**
-
-[Add a short description and your technologies.] · [Set this destination](docs/SETUP.md#featured-projects)
 
 <p align="center">
   <img src="assets/static/footer-sunset.svg" width="1200" alt="Always learning. Always building. Always exploring. Martin Lema. Pixel sunset, gulls, waves and a blinking owl.">
