@@ -1,61 +1,46 @@
-name: Grow the contribution garden
+name: Refresh coastal calendar
 
 on:
   workflow_dispatch:
   schedule:
-    # 04:23 UTC; schedules may be delayed by GitHub.
     - cron: '23 4 * * *'
   push:
     paths:
-      - 'profile.json'
-      - 'scripts/**'
-      - 'tests/**'
+      - 'scripts/coast_activity.py'
+      - 'tests/test_coast_activity.py'
       - '.github/workflows/contribution-update.yml'
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
-  group: bird-garden-${{ github.repository }}
+  group: coastal-calendar
   cancel-in-progress: false
 
 jobs:
-  grow:
+  calendar:
     if: github.ref_name == github.event.repository.default_branch
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
-    permissions:
-      contents: write
+    timeout-minutes: 5
     steps:
-      - name: Check out the default branch
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ github.event.repository.default_branch }}
-          persist-credentials: true
-      - name: Verify data handling
-        run: python3 -m unittest discover -s tests -v
-      - name: Fetch real GitHub data and render
+      - name: Check calendar layout and date coverage
+        run: python3 -m unittest discover -s tests -p test_coast_activity.py
+      - name: Render the past year of GitHub activity
         env:
-          # The short-lived automatic token works for public data. A personal
-          # token is optional and used only for the API query, never for git push.
-          GH_TOKEN: ${{ secrets.PROFILE_READ_TOKEN || github.token }}
-        run: python3 scripts/build.py --fetch
-      - name: Validate standalone assets
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/coast_activity.py
+      - name: Validate the profile images
         run: python3 scripts/validate.py
-      - name: Commit updated assets
+      - name: Publish changed calendars
         env:
-          TARGET_BRANCH: ${{ github.event.repository.default_branch }}
+          BRANCH: ${{ github.event.repository.default_branch }}
         run: |
-          set -euo pipefail
+          git add -- assets/coast-activity.svg assets/coast-activity-mobile.svg
+          if git diff --cached --quiet; then exit 0; fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- README.md STATIC.md preview.html assets
-          if git diff --cached --quiet; then
-            echo 'The garden is already current.'
-            exit 0
-          fi
-          git commit -m 'chore: refresh the contribution garden'
-          # Never force-push. If a simultaneous edit conflicts, this run fails
-          # safely; resolve it and rerun the workflow.
-          git pull --rebase origin "$TARGET_BRANCH"
-          git push origin "HEAD:$TARGET_BRANCH"
+          git commit -m 'Refresh contribution calendar'
+          git push origin "HEAD:$BRANCH"
