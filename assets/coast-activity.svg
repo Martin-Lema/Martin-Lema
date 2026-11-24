@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="352" viewBox="0 0 1200 352" role="img" aria-labelledby="title desc">
 <title id="title">Martin-Lema · GitHub activity</title>
-<desc id="desc">636 contributions from 2025-11-24 through 2026-11-23. Each square is one day. Brighter squares indicate higher GitHub contribution levels.</desc>
+<desc id="desc">640 contributions from 2025-11-25 through 2026-11-24. Each square is one day. Brighter squares indicate higher GitHub contribution levels.</desc>
 <rect width="1200" height="352" fill="#151521"/>
 <text x="52" y="69" font-family="Helvetica Neue,Arial,sans-serif" font-weight="600" font-size="42" text-anchor="start" fill="#ffe1b8">GitHub activity</text>
-<text x="1148" y="64" font-family="Helvetica Neue,Arial,sans-serif" font-weight="400" font-size="26" text-anchor="end" fill="#ffb767">636 contributions</text>
+<text x="1148" y="64" font-family="Helvetica Neue,Arial,sans-serif" font-weight="400" font-size="26" text-anchor="end" fill="#ffb767">640 contributions</text>
 <text x="124" y="116" font-family="ui-monospace,Menlo,Consolas,monospace" font-weight="400" font-size="15" text-anchor="start" fill="#c3b7b4">Dec</text>
 <text x="202" y="116" font-family="ui-monospace,Menlo,Consolas,monospace" font-weight="400" font-size="15" text-anchor="start" fill="#c3b7b4">Jan</text>
 <text x="301" y="116" font-family="ui-monospace,Menlo,Consolas,monospace" font-weight="400" font-size="15" text-anchor="start" fill="#c3b7b4">Feb</text>
@@ -19,7 +19,6 @@
 <text x="52" y="160" font-family="ui-monospace,Menlo,Consolas,monospace" font-weight="400" font-size="15" text-anchor="start" fill="#c3b7b4">Mon</text>
 <text x="52" y="198" font-family="ui-monospace,Menlo,Consolas,monospace" font-weight="400" font-size="15" text-anchor="start" fill="#c3b7b4">Wed</text>
 <text x="52" y="236" font-family="ui-monospace,Menlo,Consolas,monospace" font-weight="400" font-size="15" text-anchor="start" fill="#c3b7b4">Fri</text>
-<rect x="104" y="147" width="15" height="15" fill="#333446"><title>2025-11-24 · 0</title></rect>
 <rect x="104" y="166" width="15" height="15" fill="#333446"><title>2025-11-25 · 0</title></rect>
 <rect x="104" y="185" width="15" height="15" fill="#333446"><title>2025-11-26 · 0</title></rect>
 <rect x="104" y="204" width="15" height="15" fill="#333446"><title>2025-11-27 · 0</title></rect>
@@ -384,7 +383,8 @@
 <rect x="1109" y="242" width="15" height="15" fill="#333446"><title>2026-11-21 · 0</title></rect>
 <rect x="1128" y="128" width="15" height="15" fill="#333446"><title>2026-11-22 · 0</title></rect>
 <rect x="1128" y="147" width="15" height="15" fill="#875052"><title>2026-11-23 · 1</title></rect>
-<text x="52" y="292" font-family="ui-monospace,Menlo,Consolas,monospace" font-weight="400" font-size="17" text-anchor="start" fill="#c3b7b4">24 Nov 2025 – 23 Nov 2026</text>
+<rect x="1128" y="166" width="15" height="15" fill="#875052"><title>2026-11-24 · 4</title></rect>
+<text x="52" y="292" font-family="ui-monospace,Menlo,Consolas,monospace" font-weight="400" font-size="17" text-anchor="start" fill="#c3b7b4">25 Nov 2025 – 24 Nov 2026</text>
 <text x="1003" y="292" font-family="ui-monospace,Menlo,Consolas,monospace" font-weight="400" font-size="15" text-anchor="end" fill="#c3b7b4">Less</text>
 <rect x="1012" y="280" width="13" height="13" fill="#333446"/>
 <rect x="1029" y="280" width="13" height="13" fill="#875052"/>
